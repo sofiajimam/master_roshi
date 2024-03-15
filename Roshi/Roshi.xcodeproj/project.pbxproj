@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50DFD0882BA508B400429932 /* RoshiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0872BA508B400429932 /* RoshiApp.swift */; };
+		50DFD08A2BA508B400429932 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0892BA508B400429932 /* ContentView.swift */; };
+		50DFD08C2BA508B500429932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DFD08B2BA508B500429932 /* Assets.xcassets */; };
+		50DFD08F2BA508B500429932 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DFD08E2BA508B500429932 /* Preview Assets.xcassets */; };
+		50DFD09A2BA508B500429932 /* RoshiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0992BA508B500429932 /* RoshiTests.swift */; };
+		50DFD0A42BA508B500429932 /* RoshiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0A32BA508B500429932 /* RoshiUITests.swift */; };
+		50DFD0A62BA508B500429932 /* RoshiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0A52BA508B500429932 /* RoshiUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50DFD0962BA508B500429932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50DFD07C2BA508B400429932 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50DFD0832BA508B400429932;
+			remoteInfo = Roshi;
+		};
+		50DFD0A02BA508B500429932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50DFD07C2BA508B400429932 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50DFD0832BA508B400429932;
+			remoteInfo = Roshi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		50DFD0842BA508B400429932 /* Roshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50DFD0872BA508B400429932 /* RoshiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshiApp.swift; sourceTree = "<group>"; };
+		50DFD0892BA508B400429932 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		50DFD08B2BA508B500429932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50DFD08E2BA508B500429932 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		50DFD0902BA508B500429932 /* Roshi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Roshi.entitlements; sourceTree = "<group>"; };
+		50DFD0952BA508B500429932 /* RoshiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoshiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50DFD0992BA508B500429932 /* RoshiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshiTests.swift; sourceTree = "<group>"; };
+		50DFD09F2BA508B500429932 /* RoshiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoshiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50DFD0A32BA508B500429932 /* RoshiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshiUITests.swift; sourceTree = "<group>"; };
+		50DFD0A52BA508B500429932 /* RoshiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50DFD0812BA508B400429932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50DFD0922BA508B500429932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50DFD09C2BA508B500429932 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50DFD07B2BA508B400429932 = {
+			isa = PBXGroup;
+			children = (
+				50DFD0862BA508B400429932 /* Roshi */,
+				50DFD0982BA508B500429932 /* RoshiTests */,
+				50DFD0A22BA508B500429932 /* RoshiUITests */,
+				50DFD0852BA508B400429932 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50DFD0852BA508B400429932 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50DFD0842BA508B400429932 /* Roshi.app */,
+				50DFD0952BA508B500429932 /* RoshiTests.xctest */,
+				50DFD09F2BA508B500429932 /* RoshiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50DFD0862BA508B400429932 /* Roshi */ = {
+			isa = PBXGroup;
+			children = (
+				50DFD0872BA508B400429932 /* RoshiApp.swift */,
+				50DFD0892BA508B400429932 /* ContentView.swift */,
+				50DFD08B2BA508B500429932 /* Assets.xcassets */,
+				50DFD0902BA508B500429932 /* Roshi.entitlements */,
+				50DFD08D2BA508B500429932 /* Preview Content */,
+			);
+			path = Roshi;
+			sourceTree = "<group>";
+		};
+		50DFD08D2BA508B500429932 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				50DFD08E2BA508B500429932 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		50DFD0982BA508B500429932 /* RoshiTests */ = {
+			isa = PBXGroup;
+			children = (
+				50DFD0992BA508B500429932 /* RoshiTests.swift */,
+			);
+			path = RoshiTests;
+			sourceTree = "<group>";
+		};
+		50DFD0A22BA508B500429932 /* RoshiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				50DFD0A32BA508B500429932 /* RoshiUITests.swift */,
+				50DFD0A52BA508B500429932 /* RoshiUITestsLaunchTests.swift */,
+			);
+			path = RoshiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50DFD0832BA508B400429932 /* Roshi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50DFD0A92BA508B500429932 /* Build configuration list for PBXNativeTarget "Roshi" */;
+			buildPhases = (
+				50DFD0802BA508B400429932 /* Sources */,
+				50DFD0812BA508B400429932 /* Frameworks */,
+				50DFD0822BA508B400429932 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Roshi;
+			productName = Roshi;
+			productReference = 50DFD0842BA508B400429932 /* Roshi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		50DFD0942BA508B500429932 /* RoshiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50DFD0AC2BA508B500429932 /* Build configuration list for PBXNativeTarget "RoshiTests" */;
+			buildPhases = (
+				50DFD0912BA508B500429932 /* Sources */,
+				50DFD0922BA508B500429932 /* Frameworks */,
+				50DFD0932BA508B500429932 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50DFD0972BA508B500429932 /* PBXTargetDependency */,
+			);
+			name = RoshiTests;
+			productName = RoshiTests;
+			productReference = 50DFD0952BA508B500429932 /* RoshiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		50DFD09E2BA508B500429932 /* RoshiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50DFD0AF2BA508B500429932 /* Build configuration list for PBXNativeTarget "RoshiUITests" */;
+			buildPhases = (
+				50DFD09B2BA508B500429932 /* Sources */,
+				50DFD09C2BA508B500429932 /* Frameworks */,
+				50DFD09D2BA508B500429932 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50DFD0A12BA508B500429932 /* PBXTargetDependency */,
+			);
+			name = RoshiUITests;
+			productName = RoshiUITests;
+			productReference = 50DFD09F2BA508B500429932 /* RoshiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50DFD07C2BA508B400429932 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					50DFD0832BA508B400429932 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					50DFD0942BA508B500429932 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 50DFD0832BA508B400429932;
+					};
+					50DFD09E2BA508B500429932 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 50DFD0832BA508B400429932;
+					};
+				};
+			};
+			buildConfigurationList = 50DFD07F2BA508B400429932 /* Build configuration list for PBXProject "Roshi" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 50DFD07B2BA508B400429932;
+			productRefGroup = 50DFD0852BA508B400429932 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50DFD0832BA508B400429932 /* Roshi */,
+				50DFD0942BA508B500429932 /* RoshiTests */,
+				50DFD09E2BA508B500429932 /* RoshiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50DFD0822BA508B400429932 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50DFD08F2BA508B500429932 /* Preview Assets.xcassets in Resources */,
+				50DFD08C2BA508B500429932 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50DFD0932BA508B500429932 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50DFD09D2BA508B500429932 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50DFD0802BA508B400429932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50DFD08A2BA508B400429932 /* ContentView.swift in Sources */,
+				50DFD0882BA508B400429932 /* RoshiApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50DFD0912BA508B500429932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50DFD09A2BA508B500429932 /* RoshiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50DFD09B2BA508B500429932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50DFD0A62BA508B500429932 /* RoshiUITestsLaunchTests.swift in Sources */,
+				50DFD0A42BA508B500429932 /* RoshiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50DFD0972BA508B500429932 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50DFD0832BA508B400429932 /* Roshi */;
+			targetProxy = 50DFD0962BA508B500429932 /* PBXContainerItemProxy */;
+		};
+		50DFD0A12BA508B500429932 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50DFD0832BA508B400429932 /* Roshi */;
+			targetProxy = 50DFD0A02BA508B500429932 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		50DFD0A72BA508B500429932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		50DFD0A82BA508B500429932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		50DFD0AA2BA508B500429932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Roshi/Roshi.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Roshi/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Hortons.Roshi";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		50DFD0AB2BA508B500429932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Roshi/Roshi.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Roshi/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Hortons.Roshi";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		50DFD0AD2BA508B500429932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Hortons.RoshiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Roshi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Roshi";
+			};
+			name = Debug;
+		};
+		50DFD0AE2BA508B500429932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Hortons.RoshiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Roshi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Roshi";
+			};
+			name = Release;
+		};
+		50DFD0B02BA508B500429932 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Hortons.RoshiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Roshi;
+			};
+			name = Debug;
+		};
+		50DFD0B12BA508B500429932 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Hortons.RoshiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Roshi;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50DFD07F2BA508B400429932 /* Build configuration list for PBXProject "Roshi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50DFD0A72BA508B500429932 /* Debug */,
+				50DFD0A82BA508B500429932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50DFD0A92BA508B500429932 /* Build configuration list for PBXNativeTarget "Roshi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50DFD0AA2BA508B500429932 /* Debug */,
+				50DFD0AB2BA508B500429932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50DFD0AC2BA508B500429932 /* Build configuration list for PBXNativeTarget "RoshiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50DFD0AD2BA508B500429932 /* Debug */,
+				50DFD0AE2BA508B500429932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50DFD0AF2BA508B500429932 /* Build configuration list for PBXNativeTarget "RoshiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50DFD0B02BA508B500429932 /* Debug */,
+				50DFD0B12BA508B500429932 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50DFD07C2BA508B400429932 /* Project object */;
+}
