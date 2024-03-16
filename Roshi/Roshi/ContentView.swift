@@ -10,46 +10,25 @@ import WebKit
 import AppKit
 
 struct ContentView: View {
-    let webView = WebView(viewModel: .init(link: "https://arc.net/"))
+    //let webView = WebView(viewModel: .init(link: "https://arc.net/"))
     let bulma = Bulma()
+    let vision = Vision()
     
     func screenshot() async -> Void {
-        guard let image = await webView.takeScreenshot() else {
-            print("Couldn't get image from webbrowser")
-            return
-        }
-        saveScreenshot(image)
+
     }
     
     func predict() {
         
     }
-    
-    func saveScreenshot(_ image: NSImage) {
-        DispatchQueue.main.async {
-            let panel = NSSavePanel()
-            panel.allowedContentTypes = [.png]
-            panel.nameFieldStringValue = "screenshot.png"
-            panel.begin { (result) in
-                if result == NSApplication.ModalResponse.OK {
-                    if let url = panel.url {
-                        if let data = image.tiffRepresentation, let bitmapImage = NSBitmapImageRep(data: data) {
-                            let pngData = bitmapImage.representation(using: .png, properties: [:])
-                            try? pngData?.write(to: url)
-                        }
-                    }
-                }
-            }
-        }
-    }
 
 
     var body: some View {
         VStack {
-            webView
-            Button("Take screenshot") {
+            
+            Button("Start Vision") {
                 Task {
-                    await screenshot()
+                    await vision.startVision()
                 }
             }
         }

@@ -25,9 +25,13 @@
 		834D69A72BA514C000DE0EEF /* Assistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D69A62BA514C000DE0EEF /* Assistant.swift */; };
 		834D69A92BA514CA00DE0EEF /* AssistantProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D69A82BA514CA00DE0EEF /* AssistantProtocols.swift */; };
 		839599B72BA5257D00D998B2 /* SwiftOpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 839599B62BA5257D00D998B2 /* SwiftOpenAI */; };
-		83D3CCF72BA5985200D5FCD5 /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = 83D3CCF62BA5985200D5FCD5 /* SwiftDotEnv */; };
+		83A0F53E2BA5AD8500B3FE1B /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = 83A0F53D2BA5AD8500B3FE1B /* SwiftDotEnv */; };
 		83D3CCF92BA5992500D5FCD5 /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = 83D3CCF82BA5992500D5FCD5 /* SwiftDotEnv */; };
 		83D3CCFB2BA59A2700D5FCD5 /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = 83D3CCFA2BA59A2700D5FCD5 /* SwiftDotEnv */; };
+		83D3CCFD2BA59CC100D5FCD5 /* SwiftOpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 83D3CCFC2BA59CC100D5FCD5 /* SwiftOpenAI */; };
+		83D3CCFF2BA59CCB00D5FCD5 /* SwiftOpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 83D3CCFE2BA59CCB00D5FCD5 /* SwiftOpenAI */; };
+		83F7A40D2BA5A28900003C96 /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F7A40C2BA5A28900003C96 /* Vision.swift */; };
+		83F7A40F2BA5A2A900003C96 /* VisionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F7A40E2BA5A2A900003C96 /* VisionProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,8 @@
 		834D69A32BA5148F00DE0EEF /* FoolProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoolProtocols.swift; sourceTree = "<group>"; };
 		834D69A62BA514C000DE0EEF /* Assistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assistant.swift; sourceTree = "<group>"; };
 		834D69A82BA514CA00DE0EEF /* AssistantProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantProtocols.swift; sourceTree = "<group>"; };
+		83F7A40C2BA5A28900003C96 /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
+		83F7A40E2BA5A2A900003C96 /* VisionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83D3CCF72BA5985200D5FCD5 /* SwiftDotEnv in Frameworks */,
+				83A0F53E2BA5AD8500B3FE1B /* SwiftDotEnv in Frameworks */,
 				839599B72BA5257D00D998B2 /* SwiftOpenAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D3CCFD2BA59CC100D5FCD5 /* SwiftOpenAI in Frameworks */,
 				83D3CCF92BA5992500D5FCD5 /* SwiftDotEnv in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D3CCFF2BA59CCB00D5FCD5 /* SwiftOpenAI in Frameworks */,
 				83D3CCFB2BA59A2700D5FCD5 /* SwiftDotEnv in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +157,7 @@
 		50DFD0862BA508B400429932 /* Roshi */ = {
 			isa = PBXGroup;
 			children = (
+				83F7A40B2BA5A28000003C96 /* Vision */,
 				448373FA2BA573F8002B7FCE /* ViewModels */,
 				448373F72BA57309002B7FCE /* Views */,
 				448373F02BA569F0002B7FCE /* Bulma */,
@@ -223,6 +232,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		83F7A40B2BA5A28000003C96 /* Vision */ = {
+			isa = PBXGroup;
+			children = (
+				83F7A40C2BA5A28900003C96 /* Vision.swift */,
+				83F7A40E2BA5A2A900003C96 /* VisionProtocols.swift */,
+			);
+			path = Vision;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,7 +259,7 @@
 			name = Roshi;
 			packageProductDependencies = (
 				839599B62BA5257D00D998B2 /* SwiftOpenAI */,
-				83D3CCF62BA5985200D5FCD5 /* SwiftDotEnv */,
+				83A0F53D2BA5AD8500B3FE1B /* SwiftDotEnv */,
 			);
 			productName = Roshi;
 			productReference = 50DFD0842BA508B400429932 /* Roshi.app */;
@@ -263,6 +281,7 @@
 			name = RoshiTests;
 			packageProductDependencies = (
 				83D3CCF82BA5992500D5FCD5 /* SwiftDotEnv */,
+				83D3CCFC2BA59CC100D5FCD5 /* SwiftOpenAI */,
 			);
 			productName = RoshiTests;
 			productReference = 50DFD0952BA508B500429932 /* RoshiTests.xctest */;
@@ -284,6 +303,7 @@
 			name = RoshiUITests;
 			packageProductDependencies = (
 				83D3CCFA2BA59A2700D5FCD5 /* SwiftDotEnv */,
+				83D3CCFE2BA59CCB00D5FCD5 /* SwiftOpenAI */,
 			);
 			productName = RoshiUITests;
 			productReference = 50DFD09F2BA508B500429932 /* RoshiUITests.xctest */;
@@ -372,12 +392,14 @@
 				834D69A42BA5148F00DE0EEF /* FoolProtocols.swift in Sources */,
 				834D69A92BA514CA00DE0EEF /* AssistantProtocols.swift in Sources */,
 				448373F62BA5707E002B7FCE /* Bulma - Iteration 18900.mlmodel in Sources */,
+				83F7A40F2BA5A2A900003C96 /* VisionProtocols.swift in Sources */,
 				834D69A72BA514C000DE0EEF /* Assistant.swift in Sources */,
 				50DFD08A2BA508B400429932 /* ContentView.swift in Sources */,
 				448373FC2BA57412002B7FCE /* WebViewModel.swift in Sources */,
 				834D69A22BA5148400DE0EEF /* Fool.swift in Sources */,
 				8315CC122BA50C41000205E9 /* Brain.swift in Sources */,
 				50DFD0882BA508B400429932 /* RoshiApp.swift in Sources */,
+				83F7A40D2BA5A28900003C96 /* Vision.swift in Sources */,
 				448373F92BA57347002B7FCE /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,7 +739,7 @@
 			package = 839599B52BA5254500D998B2 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */;
 			productName = SwiftOpenAI;
 		};
-		83D3CCF62BA5985200D5FCD5 /* SwiftDotEnv */ = {
+		83A0F53D2BA5AD8500B3FE1B /* SwiftDotEnv */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 83D3CCF52BA5985200D5FCD5 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */;
 			productName = SwiftDotEnv;
@@ -731,6 +753,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 83D3CCF52BA5985200D5FCD5 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */;
 			productName = SwiftDotEnv;
+		};
+		83D3CCFC2BA59CC100D5FCD5 /* SwiftOpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 839599B52BA5254500D998B2 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */;
+			productName = SwiftOpenAI;
+		};
+		83D3CCFE2BA59CCB00D5FCD5 /* SwiftOpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 839599B52BA5254500D998B2 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */;
+			productName = SwiftOpenAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
