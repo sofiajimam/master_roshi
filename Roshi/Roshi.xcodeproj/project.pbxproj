@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		448373F42BA56B9B002B7FCE /* Bulma.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448373F32BA56B9B002B7FCE /* Bulma.swift */; };
+		448373F62BA5707E002B7FCE /* Bulma - Iteration 18900.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 448373F52BA5707E002B7FCE /* Bulma - Iteration 18900.mlmodel */; };
+		448373F92BA57347002B7FCE /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448373F82BA57347002B7FCE /* WebView.swift */; };
+		448373FC2BA57412002B7FCE /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448373FB2BA57412002B7FCE /* WebViewModel.swift */; };
 		50DFD0882BA508B400429932 /* RoshiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0872BA508B400429932 /* RoshiApp.swift */; };
 		50DFD08A2BA508B400429932 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0892BA508B400429932 /* ContentView.swift */; };
 		50DFD08C2BA508B500429932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DFD08B2BA508B500429932 /* Assets.xcassets */; };
@@ -41,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		448373F32BA56B9B002B7FCE /* Bulma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bulma.swift; sourceTree = "<group>"; };
+		448373F52BA5707E002B7FCE /* Bulma - Iteration 18900.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Bulma - Iteration 18900.mlmodel"; sourceTree = "<group>"; };
+		448373F82BA57347002B7FCE /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		448373FB2BA57412002B7FCE /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		50DFD0842BA508B400429932 /* Roshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DFD0872BA508B400429932 /* RoshiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshiApp.swift; sourceTree = "<group>"; };
 		50DFD0892BA508B400429932 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +94,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		448373F02BA569F0002B7FCE /* Bulma */ = {
+			isa = PBXGroup;
+			children = (
+				448373F52BA5707E002B7FCE /* Bulma - Iteration 18900.mlmodel */,
+				448373F32BA56B9B002B7FCE /* Bulma.swift */,
+			);
+			path = Bulma;
+			sourceTree = "<group>";
+		};
+		448373F72BA57309002B7FCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				448373F82BA57347002B7FCE /* WebView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		448373FA2BA573F8002B7FCE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				448373FB2BA57412002B7FCE /* WebViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		50DFD07B2BA508B400429932 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +143,9 @@
 		50DFD0862BA508B400429932 /* Roshi */ = {
 			isa = PBXGroup;
 			children = (
+				448373FA2BA573F8002B7FCE /* ViewModels */,
+				448373F72BA57309002B7FCE /* Views */,
+				448373F02BA569F0002B7FCE /* Bulma */,
 				834D69A52BA514AF00DE0EEF /* Assistant */,
 				834D69A02BA5146C00DE0EEF /* Fool */,
 				832F26192BA50B1A0077CDB6 /* Brain */,
@@ -318,13 +354,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				834D699E2BA5143C00DE0EEF /* BrainProtocols.swift in Sources */,
+				448373F42BA56B9B002B7FCE /* Bulma.swift in Sources */,
 				834D69A42BA5148F00DE0EEF /* FoolProtocols.swift in Sources */,
 				834D69A92BA514CA00DE0EEF /* AssistantProtocols.swift in Sources */,
+				448373F62BA5707E002B7FCE /* Bulma - Iteration 18900.mlmodel in Sources */,
 				834D69A72BA514C000DE0EEF /* Assistant.swift in Sources */,
 				50DFD08A2BA508B400429932 /* ContentView.swift in Sources */,
+				448373FC2BA57412002B7FCE /* WebViewModel.swift in Sources */,
 				834D69A22BA5148400DE0EEF /* Fool.swift in Sources */,
 				8315CC122BA50C41000205E9 /* Brain.swift in Sources */,
 				50DFD0882BA508B400429932 /* RoshiApp.swift in Sources */,
+				448373F92BA57347002B7FCE /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
