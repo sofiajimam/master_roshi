@@ -29,6 +29,11 @@ struct WebView: NSViewRepresentable {
         return Coordinator(viewModel)
     }
     
+    public func click(point: CGPoint) {
+        let script = "document.elementFromPoint(\(x), \(y)).click();"
+        webView.evaluateJavaScript(script, completionHandler: nil)
+    }
+    
     public func takeScreenshot() async -> NSImage? {
         let snapshotConfig = WKSnapshotConfiguration()
         return await withCheckedContinuation { continuation in

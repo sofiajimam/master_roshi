@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol VisionProtocol {
-    func startVision() async
+    func startVision(highlightedImage: NSImage, plainImage: NSImage) async
 }

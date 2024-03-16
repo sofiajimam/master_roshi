@@ -9,8 +9,14 @@ import SwiftUI
 import CoreML
 import Foundation
 
+struct MergePredictOutput {
+    let id: UUID
+    let image: NSImage
+}
+
 class Bulma {
     private let model: Bulma___Iteration_18900
+    private let memory = Memory.shared
     
     init() {
         self.model = Bulma___Iteration_18900()
@@ -41,7 +47,7 @@ class Bulma {
         return image
     }
 
-    func mergePredict(image: NSImage, boxes: MLMultiArray) async -> NSImage {
+    func mergePredict(image: NSImage, boxes: MLMultiArray) async -> MergePredictOutput {
         var boxArray = [[Double]]()
         let count = boxes.shape[0].intValue
         let featurePointer = boxes.dataPointer.bindMemory(to: Double.self, capacity: boxes.count)
@@ -54,15 +60,29 @@ class Bulma {
             boxArray.append([x, y, width, height])
         }
 
+        let memory = self.memory.add(memory: CachedMemory(image: image, boxes: boxArray))
+
         return await withCheckedContinuation { continuation in
             let imageViewWithBoxes = SegmentedView(image: image, boxes: boxArray)
             DispatchQueue.main.async {
                 let hostingView = NSHostingView(rootView: imageViewWithBoxes)
                 hostingView.frame = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
                 let viewImage = self.viewToImage(from: hostingView)
-                continuation.resume(returning: viewImage)
+                continuation.resume(returning: .init(id: memory.id, image: viewImage))
             }
         }
+    }
+
+    func getBoxCenter(box: [Double]) -> CGPoint {
+        let x = CGFloat(box[0]) + CGFloat(box[2]) / 2
+        let y = CGFloat(box[1]) + CGFloat(box[3]) / 2
+        return CGPoint(x: x, y: y)
+    }
+
+    func getBoxPoint(boxNumber: Int, from image: UUID) -> CGPoint {
+        let memory = self.memory.getMemory(id: image)
+        let box = memory?.boxes[boxNumber]
+        return getBoxCenter(box: box!)
     }
 }
 
