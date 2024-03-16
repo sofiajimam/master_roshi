@@ -12,6 +12,7 @@ struct ContentView: View {
         VStack {
             HStack(spacing: 10) {
                 SidebarMenuView()
+                RetoScreenView()
             }.padding(10)
         }.frame(minWidth: 0,
                 maxWidth: .infinity,

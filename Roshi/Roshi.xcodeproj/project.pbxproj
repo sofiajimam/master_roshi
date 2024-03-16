@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		508E67C02BA588C4001F731E /* RetoScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E67BF2BA588C4001F731E /* RetoScreenView.swift */; };
+		508E67C22BA58B65001F731E /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508E67C12BA58B65001F731E /* MarkdownView.swift */; };
 		50DFD0882BA508B400429932 /* RoshiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0872BA508B400429932 /* RoshiApp.swift */; };
 		50DFD08A2BA508B400429932 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0892BA508B400429932 /* ContentView.swift */; };
 		50DFD08C2BA508B500429932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50DFD08B2BA508B500429932 /* Assets.xcassets */; };
@@ -15,6 +17,7 @@
 		50DFD0A42BA508B500429932 /* RoshiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0A32BA508B500429932 /* RoshiUITests.swift */; };
 		50DFD0A62BA508B500429932 /* RoshiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0A52BA508B500429932 /* RoshiUITestsLaunchTests.swift */; };
 		50DFD0B32BA50F9C00429932 /* SidebarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0B22BA50F9C00429932 /* SidebarMenuView.swift */; };
+		50FA223A2BA58FCD00382BB7 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 50FA22392BA58FCD00382BB7 /* MarkdownUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		508E67BF2BA588C4001F731E /* RetoScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetoScreenView.swift; sourceTree = "<group>"; };
+		508E67C12BA58B65001F731E /* MarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
 		50DFD0842BA508B400429932 /* Roshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DFD0872BA508B400429932 /* RoshiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshiApp.swift; sourceTree = "<group>"; };
 		50DFD0892BA508B400429932 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50FA223A2BA58FCD00382BB7 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +109,8 @@
 				50DFD0902BA508B500429932 /* Roshi.entitlements */,
 				50DFD08D2BA508B500429932 /* Preview Content */,
 				50DFD0B22BA50F9C00429932 /* SidebarMenuView.swift */,
+				508E67BF2BA588C4001F731E /* RetoScreenView.swift */,
+				508E67C12BA58B65001F731E /* MarkdownView.swift */,
 			);
 			path = Roshi;
 			sourceTree = "<group>";
@@ -148,6 +156,9 @@
 			dependencies = (
 			);
 			name = Roshi;
+			packageProductDependencies = (
+				50FA22392BA58FCD00382BB7 /* MarkdownUI */,
+			);
 			productName = Roshi;
 			productReference = 50DFD0842BA508B400429932 /* Roshi.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +231,9 @@
 				Base,
 			);
 			mainGroup = 50DFD07B2BA508B400429932;
+			packageReferences = (
+				508E67BE2BA5883E001F731E /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+			);
 			productRefGroup = 50DFD0852BA508B400429932 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -262,8 +276,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508E67C02BA588C4001F731E /* RetoScreenView.swift in Sources */,
 				50DFD08A2BA508B400429932 /* ContentView.swift in Sources */,
 				50DFD0B32BA50F9C00429932 /* SidebarMenuView.swift in Sources */,
+				508E67C22BA58B65001F731E /* MarkdownView.swift in Sources */,
 				50DFD0882BA508B400429932 /* RoshiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +593,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		508E67BE2BA5883E001F731E /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		50FA22392BA58FCD00382BB7 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 508E67BE2BA5883E001F731E /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 50DFD07C2BA508B400429932 /* Project object */;
 }
