@@ -58,6 +58,16 @@ struct ContentView: View {
         let outline = await bulma.mergePredict(image: image, boxes: prediction)
         saveScreenshot(outline)
     }
+    
+    func see() async {
+        guard let image = await webView.takeScreenshot() else {
+            print("Couldn't get image from webbrowser")
+            return
+        }
+        let prediction = bulma.predict(image)
+        let outline = await bulma.mergePredict(image: image, boxes: prediction)
+        await vision.startVision(highlightedImage: outline, plainImage:image)
+    }
 
 
     var body: some View {
@@ -77,6 +87,11 @@ struct ContentView: View {
                 Button("Outline screenshot") {
                     Task {
                         await outlinePredict()
+                    }
+                }
+                Button("See screenshot") {
+                    Task {
+                        await see()
                     }
                 }
             }

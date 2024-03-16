@@ -7,9 +7,9 @@
 
 import Foundation
 import SwiftOpenAI
+import SwiftUI
 
 class Vision: VisionProtocol, ObservableObject {
-
     private let service: OpenAIService
    
     private var selectedImageURL: URL?
@@ -19,39 +19,20 @@ class Vision: VisionProtocol, ObservableObject {
         self.service = OpenAIServiceFactory.service(apiKey: apiKey)
     }
     
-    func startVision() async {
+    func startVision(highlightedImage: NSImage, plainImage: NSImage) async {
         do {
-            /* let fileManager = FileManager.default
-            let folderURL = URL(fileURLWithPath: "~/Documents/todo-app/images", isDirectory: true).resolvingSymlinksInPath()
- */
-            /* print("folderURL")
-            print(folderURL) */
-            
-            // Get the image
-            /* let fileURLs = try? fileManager.contentsOfDirectory(at: folderURL, includingPropertiesForKeys: nil)
-            guard let selectedImageURL = fileURLs?.first else { return }
- */
+            guard let base64HighlightedImage = imageToBase64(highlightedImage) else { return }
+            guard let base64PlainImage = imageToBase64(highlightedImage) else { return }
 
-            /* let imagePath = ("~/Documents/todo-app/images/imagen.png" as NSString).expandingTildeInPath            
-            let selectedImageURL = URL(fileURLWithPath: imagePath)
-            print("selectedImageURL")
-            print(selectedImageURL)
+            guard let highlightedImageURL = URL(string: "data:image/jpeg;base64,\(base64HighlightedImage)") else { return }
+            guard let plainImageURL = URL(string: "data:image/jpeg;base64,\(base64PlainImage)") else { return }
+            let messageContent: [ChatCompletionParameters.Message.ContentType.MessageContent] = [.imageUrl(highlightedImageURL), .imageUrl(plainImageURL)]
             
-            // encode it base 64
-            let encodedImage = encodeImage(imagePath: selectedImageURL.path)
-            guard let base64Image = encodedImage else { return }
-
-            print("encodedImage")
-            print(encodedImage) */
-
-            // send request
-            let prompt = "What is this?"
-            //guard let imageURL = URL(string: "data:image/jpeg;base64,\(base64Image)") else { return }
-            guard let imageURL = URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gfp-wisconsin-madison-the-nature-boardwalk.jpg/2560px-Gfp-wisconsin-madison-the-nature-boardwalk.jpg") else { return }
-            let messageContent: [ChatCompletionParameters.Message.ContentType.MessageContent] = [.text(prompt), .imageUrl(imageURL)]
-            
-            let parameters = ChatCompletionParameters(messages: [.init(role: .user, content: .contentArray(messageContent))], model: .gpt4VisionPreview)
-            let chatCompletionObject = try await service.startStreamedChat(
+            let parameters = ChatCompletionParameters(messages: [
+                .init(role: .system, content: .text("You are an AI that sees the segmented screenshots the user sends you and makes numbered lists describing the content of each segment highlighted with a red box and a number. \n IMPORTANT: You are receiving 2 images, one of them is the plain and the other one is the same interface but with the segments highlighted. Also give a general explanation or aproximation of the content of the screen.")),
+                .init(role: .user, content: .contentArray(messageContent)),
+            ], model: .gpt4VisionPreview, maxTokens: 1400)
+            let chatCompletionObject = try await service.startChat(
                 parameters: parameters)
             
             print("chatCompletionObject")
@@ -61,92 +42,22 @@ class Vision: VisionProtocol, ObservableObject {
         }
     }
 
-    func encodeImage(imagePath: String) -> String? {
-        guard let imageData = FileManager.default.contents(atPath: imagePath) else {
+    func imageToBase64(_ image: NSImage) -> String? {
+        guard let imageData = image.tiffRepresentation else {
             return nil
         }
-        return imageData.base64EncodedString()
+        
+        guard let bitmap = NSBitmapImageRep(data: imageData) else {
+            return nil
+        }
+        
+        let properties: [NSBitmapImageRep.PropertyKey: Any] = [.compressionFactor: 1.0]
+        guard let pngData = bitmap.representation(using: .png, properties: properties) else {
+            return nil
+        }
+        let base64String = pngData.base64EncodedString(options: [])
+        
+        return base64String
     }
 
 }
-
-
-//
-//  Vision.swift
-//  Roshi
-//
-//  Created by Sofía Jimémez Martínez on 16/03/24.
-//
-
-import Foundation
-import SwiftOpenAI
-
-class Vision: VisionProtocol, ObservableObject {
-
-    private let apiKey = "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"
-    private var selectedImageURL: URL?
-
-    func startVision() async {
-        do {
-            // Assuming you have a valid image URL
-            guard let imagePath = Bundle.main.path(forResource: "~/Documents/todo-app/images/imagen.png", ofType: "jpg") else { return }
-            guard let base64Image = encodeImage(imagePath: imagePath) else { return }
-
-            let headers = [
-                "Content-Type": "application/json",
-                "Authorization": "Bearer \(apiKey)"
-            ]
-            
-            let payload: [String: Any] = [
-                "model": "gpt-4-vision-preview",
-                "messages": [
-                    [
-                        "role": "user",
-                        "content": [
-                            [
-                                "type": "text",
-                                "text": "What’s in this image?"
-                            ],
-                            [
-                                "type": "image_url",
-                                "image_url": [
-                                    "url": "data:image/jpeg;base64,\(base64Image)"
-                                ]
-                            ]
-                        ]
-                    ]
-                ],
-                "max_tokens": 300
-            ]
-
-            guard let url = URL(string: "https://api.openai.com/v1/chat/completions") else {
-                print("Invalid URL")
-                return
-            }
-            
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.allHTTPHeaderFields = headers
-            request.httpBody = try? JSONSerialization.data(withJSONObject: payload, options: [])
-            
-            let (data, _) = try await URLSession.shared.data(for: request)
-            
-            if let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                print(jsonObject)
-            } else {
-                print("Failed to parse JSON response")
-            }
-        } catch {
-            print("Error: \(error)")
-        }
-    }
-
-    func encodeImage(imagePath: String) -> String? {
-        guard let imageData = FileManager.default.contents(atPath: imagePath) else {
-            return nil
-        }
-        return imageData.base64EncodedString()
-    }
-
-}
-
