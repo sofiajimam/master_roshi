@@ -86,7 +86,8 @@ struct ContentView: View {
             HStack(spacing: 10) {
                 Spacer()
                 SidebarMenuView()
-                RetoScreenView()
+//                RetoScreenView()
+                NewChallengeView()
                 Spacer()
             }.padding(10)
         }.frame(minWidth: 0,
