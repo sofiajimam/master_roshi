@@ -12,7 +12,7 @@ import AppKit
 struct ContentView: View {
     let webView = WebView(viewModel: .init(link: "https://arc.net/"))
     let bulma = Bulma()
-    let vision = Vision()
+    //let vision = Vision()
     
     func screenshot() async {
         guard let image = await webView.takeScreenshot() else {
@@ -23,22 +23,22 @@ struct ContentView: View {
     }
     
     func saveScreenshot(_ image: NSImage) {
-            DispatchQueue.main.async {
-                let panel = NSSavePanel()
-                panel.allowedContentTypes = [.png]
-                panel.nameFieldStringValue = "screenshot.png"
-                panel.begin { (result) in
-                    if result == NSApplication.ModalResponse.OK {
-                        if let url = panel.url {
-                            if let data = image.tiffRepresentation, let bitmapImage = NSBitmapImageRep(data: data) {
-                                let pngData = bitmapImage.representation(using: .png, properties: [:])
-                                try? pngData?.write(to: url)
-                            }
+        DispatchQueue.main.async {
+            let panel = NSSavePanel()
+            panel.allowedContentTypes = [.png]
+            panel.nameFieldStringValue = "screenshot.png"
+            panel.begin { (result) in
+                if result == NSApplication.ModalResponse.OK {
+                    if let url = panel.url {
+                        if let data = image.tiffRepresentation, let bitmapImage = NSBitmapImageRep(data: data) {
+                            let pngData = bitmapImage.representation(using: .png, properties: [:])
+                            try? pngData?.write(to: url)
                         }
                     }
                 }
             }
         }
+    }
     
     func predict() async {
         guard let image = await webView.takeScreenshot() else {
@@ -58,45 +58,50 @@ struct ContentView: View {
         let outline = await bulma.mergePredict(image: image, boxes: prediction)
         saveScreenshot(outline)
     }
-
-
+    
+    
     var body: some View {
         VStack {
-            webView
-            HStack {
-                Button("Take screenshot") {
-                    Task {
-                        await screenshot()
+            VStack {
+                webView
+                HStack {
+                    Button("Take screenshot") {
+                        Task {
+                            await screenshot()
+                        }
                     }
-                }
-                Button("Predict screenshot") {
-                    Task {
-                        await predict()
+                    Button("Predict screenshot") {
+                        Task {
+                            await predict()
+                        }
                     }
-                }
-                Button("Outline screenshot") {
-                    Task {
-                        await outlinePredict()
+                    Button("Outline screenshot") {
+                        Task {
+                            await outlinePredict()
+                        }
                     }
                 }
             }
+            .padding()
             
-        }
-        .padding()
             HStack(spacing: 10) {
                 Spacer()
                 SidebarMenuView()
-//                RetoScreenView()
+                //RetoScreenView()
                 NewChallengeView()
                 Spacer()
-            }.padding(10)
-        }.frame(minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity,
-                alignment: .topLeading)
+            }
+            .padding(10)
+        }
+        .frame(minWidth: 0,
+               maxWidth: .infinity,
+               minHeight: 0,
+               maxHeight: .infinity,
+               alignment: .topLeading)
     }
+    
 }
+
 #Preview {
     ContentView()
 }
