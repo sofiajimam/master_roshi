@@ -32,9 +32,29 @@ struct SidebarMenuView: View {
                     .cornerRadius(10)
                     .overlay(RoundedRectangle(cornerRadius: 10).inset(by: 0.50).stroke(Color(red: 0.56, green: 0.56, blue: 0.58).opacity(0.20), lineWidth: 0.50))
             }).padding()
+            HStack(alignment:.top){
+                Text("Tus Retos").font(Font.custom("SF Pro Display", size: 14).weight(.medium))
+                    .foregroundColor(Color(red: 0.56, green: 0.56, blue: 0.58))
+                Spacer()
+                Image("PlusIcon")
+            }.padding([.horizontal], 27)
+            HStack{
+                Text("Creémos una lista de pendiente...")
+                        .font(Font.custom("SF Pro Display", size: 16))
+                        .foregroundColor(.black)
+            }.padding(EdgeInsets(top: 12, leading: 15, bottom: 11, trailing: 25))
+                .frame(width: 260, height: 42)
+                .background(Color(red: 0.56, green: 0.56, blue: 0.58).opacity(0.20))
+                .cornerRadius(5)
+            HStack{
+                Text("Aprende a hacer elementos inte...")
+                        .font(Font.custom("SF Pro Display", size: 16))
+                        .foregroundColor(.black)
+            }.padding(EdgeInsets(top: 12, leading: 15, bottom: 11, trailing: 25))
+                .frame(width: 260, height: 42)
             Spacer()
         }).frame(width: 300, height:.infinity).background(.white)
-            .cornerRadius(14);
+            .cornerRadius(10)
       }
     }
 
