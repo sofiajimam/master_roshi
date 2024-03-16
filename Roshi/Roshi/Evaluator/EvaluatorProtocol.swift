@@ -1,18 +1,16 @@
 //
-//  AssistantProtocols.swift
+//  EvaluatorProtocol.swift
 //  Roshi
 //
-//  Created by Sofía Jimémez Martínez on 15/03/24.
+//  Created by Sofía Jimémez Martínez on 16/03/24.
 //
 
 import Foundation
 import SwiftOpenAI
 
-
-protocol AssistantProtocol {
+protocol EvaluatorProtocol {
     func commandAssistant(message: String) async -> String
     func mentorAssistant(message: String) async -> String
     func retrieveAssistant() async throws -> AssistantObject
     func createThread() async throws -> ThreadObject
-    func askGPT3(message: String) async throws -> String
-} 
+}

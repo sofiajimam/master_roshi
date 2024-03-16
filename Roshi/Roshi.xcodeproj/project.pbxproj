@@ -21,12 +21,19 @@
 		50DFD09A2BA508B500429932 /* RoshiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0992BA508B500429932 /* RoshiTests.swift */; };
 		50DFD0A42BA508B500429932 /* RoshiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0A32BA508B500429932 /* RoshiUITests.swift */; };
 		50DFD0A62BA508B500429932 /* RoshiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0A52BA508B500429932 /* RoshiUITestsLaunchTests.swift */; };
+		50FA223C2BA5990A00382BB7 /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA223B2BA5990A00382BB7 /* ToolBarView.swift */; };
+		50FA223E2BA5A03100382BB7 /* ChatRoshiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA223D2BA5A03100382BB7 /* ChatRoshiView.swift */; };
+		50FA22422BA5B8D600382BB7 /* NewChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA22412BA5B8D600382BB7 /* NewChallengeView.swift */; };
 		8315CC122BA50C41000205E9 /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8315CC112BA50C41000205E9 /* Brain.swift */; };
 		834D699E2BA5143C00DE0EEF /* BrainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D699D2BA5143C00DE0EEF /* BrainProtocols.swift */; };
 		834D69A22BA5148400DE0EEF /* Fool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D69A12BA5148400DE0EEF /* Fool.swift */; };
 		834D69A42BA5148F00DE0EEF /* FoolProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D69A32BA5148F00DE0EEF /* FoolProtocols.swift */; };
 		834D69A72BA514C000DE0EEF /* Assistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D69A62BA514C000DE0EEF /* Assistant.swift */; };
 		834D69A92BA514CA00DE0EEF /* AssistantProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D69A82BA514CA00DE0EEF /* AssistantProtocols.swift */; };
+		83610E6B2BA5CB510074458E /* SidebarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83610E6A2BA5CB510074458E /* SidebarMenuView.swift */; };
+		83610E6D2BA5CF7B0074458E /* EvaluatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83610E6C2BA5CF7B0074458E /* EvaluatorProtocol.swift */; };
+		83610E6F2BA5D8DA0074458E /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83610E6E2BA5D8DA0074458E /* MarkdownView.swift */; };
+		83610E722BA5D9730074458E /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 83610E712BA5D9730074458E /* MarkdownUI */; };
 		839599B72BA5257D00D998B2 /* SwiftOpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 839599B62BA5257D00D998B2 /* SwiftOpenAI */; };
 		83A0F53E2BA5AD8500B3FE1B /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = 83A0F53D2BA5AD8500B3FE1B /* SwiftDotEnv */; };
 		83D3CCF92BA5992500D5FCD5 /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = 83D3CCF82BA5992500D5FCD5 /* SwiftDotEnv */; };
@@ -35,11 +42,6 @@
 		83D3CCFF2BA59CCB00D5FCD5 /* SwiftOpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 83D3CCFE2BA59CCB00D5FCD5 /* SwiftOpenAI */; };
 		83F7A40D2BA5A28900003C96 /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F7A40C2BA5A28900003C96 /* Vision.swift */; };
 		83F7A40F2BA5A2A900003C96 /* VisionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F7A40E2BA5A2A900003C96 /* VisionProtocols.swift */; };
-		50DFD0B32BA50F9C00429932 /* SidebarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0B22BA50F9C00429932 /* SidebarMenuView.swift */; };
-		50FA223A2BA58FCD00382BB7 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 50FA22392BA58FCD00382BB7 /* MarkdownUI */; };
-		50FA223C2BA5990A00382BB7 /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA223B2BA5990A00382BB7 /* ToolBarView.swift */; };
-		50FA223E2BA5A03100382BB7 /* ChatRoshiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA223D2BA5A03100382BB7 /* ChatRoshiView.swift */; };
-		50FA22422BA5B8D600382BB7 /* NewChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA22412BA5B8D600382BB7 /* NewChallengeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,18 +80,20 @@
 		50DFD09F2BA508B500429932 /* RoshiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoshiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DFD0A32BA508B500429932 /* RoshiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshiUITests.swift; sourceTree = "<group>"; };
 		50DFD0A52BA508B500429932 /* RoshiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		50FA223B2BA5990A00382BB7 /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
+		50FA223D2BA5A03100382BB7 /* ChatRoshiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoshiView.swift; sourceTree = "<group>"; };
+		50FA22412BA5B8D600382BB7 /* NewChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChallengeView.swift; sourceTree = "<group>"; };
 		8315CC112BA50C41000205E9 /* Brain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
 		834D699D2BA5143C00DE0EEF /* BrainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainProtocols.swift; sourceTree = "<group>"; };
 		834D69A12BA5148400DE0EEF /* Fool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fool.swift; sourceTree = "<group>"; };
 		834D69A32BA5148F00DE0EEF /* FoolProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoolProtocols.swift; sourceTree = "<group>"; };
 		834D69A62BA514C000DE0EEF /* Assistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assistant.swift; sourceTree = "<group>"; };
 		834D69A82BA514CA00DE0EEF /* AssistantProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantProtocols.swift; sourceTree = "<group>"; };
+		83610E6A2BA5CB510074458E /* SidebarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarMenuView.swift; sourceTree = "<group>"; };
+		83610E6C2BA5CF7B0074458E /* EvaluatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluatorProtocol.swift; sourceTree = "<group>"; };
+		83610E6E2BA5D8DA0074458E /* MarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
 		83F7A40C2BA5A28900003C96 /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
 		83F7A40E2BA5A2A900003C96 /* VisionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionProtocols.swift; sourceTree = "<group>"; };
-		50DFD0B22BA50F9C00429932 /* SidebarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarMenuView.swift; sourceTree = "<group>"; };
-		50FA223B2BA5990A00382BB7 /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
-		50FA223D2BA5A03100382BB7 /* ChatRoshiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoshiView.swift; sourceTree = "<group>"; };
-		50FA22412BA5B8D600382BB7 /* NewChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChallengeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83610E722BA5D9730074458E /* MarkdownUI in Frameworks */,
 				83A0F53E2BA5AD8500B3FE1B /* SwiftDotEnv in Frameworks */,
 				839599B72BA5257D00D998B2 /* SwiftOpenAI in Frameworks */,
 			);
@@ -127,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				447104A72BA5C80D00759C36 /* Evaluator.swift */,
+				83610E6C2BA5CF7B0074458E /* EvaluatorProtocol.swift */,
 			);
 			path = Evaluator;
 			sourceTree = "<group>";
@@ -195,12 +201,11 @@
 				50DFD08B2BA508B500429932 /* Assets.xcassets */,
 				50DFD0902BA508B500429932 /* Roshi.entitlements */,
 				50DFD08D2BA508B500429932 /* Preview Content */,
-				50DFD0B22BA50F9C00429932 /* SidebarMenuView.swift */,
 				50FA223D2BA5A03100382BB7 /* ChatRoshiView.swift */,
-				508E67BF2BA588C4001F731E /* RetoScreenView.swift */,
-				508E67C12BA58B65001F731E /* MarkdownView.swift */,
 				50FA223B2BA5990A00382BB7 /* ToolBarView.swift */,
 				50FA22412BA5B8D600382BB7 /* NewChallengeView.swift */,
+				83610E6A2BA5CB510074458E /* SidebarMenuView.swift */,
+				83610E6E2BA5D8DA0074458E /* MarkdownView.swift */,
 			);
 			path = Roshi;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 			packageProductDependencies = (
 				839599B62BA5257D00D998B2 /* SwiftOpenAI */,
 				83A0F53D2BA5AD8500B3FE1B /* SwiftDotEnv */,
+				83610E712BA5D9730074458E /* MarkdownUI */,
 			);
 			productName = Roshi;
 			productReference = 50DFD0842BA508B400429932 /* Roshi.app */;
@@ -376,6 +382,7 @@
 			packageReferences = (
 				839599B52BA5254500D998B2 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */,
 				83D3CCF52BA5985200D5FCD5 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */,
+				83610E702BA5D9430074458E /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = 50DFD0852BA508B400429932 /* Products */;
 			projectDirPath = "";
@@ -431,8 +438,10 @@
 				834D69A72BA514C000DE0EEF /* Assistant.swift in Sources */,
 				50FA223C2BA5990A00382BB7 /* ToolBarView.swift in Sources */,
 				50FA22422BA5B8D600382BB7 /* NewChallengeView.swift in Sources */,
+				83610E6B2BA5CB510074458E /* SidebarMenuView.swift in Sources */,
+				83610E6F2BA5D8DA0074458E /* MarkdownView.swift in Sources */,
+				83610E6D2BA5CF7B0074458E /* EvaluatorProtocol.swift in Sources */,
 				50FA223E2BA5A03100382BB7 /* ChatRoshiView.swift in Sources */,
-				508E67C02BA588C4001F731E /* RetoScreenView.swift in Sources */,
 				50DFD08A2BA508B400429932 /* ContentView.swift in Sources */,
 				448373FC2BA57412002B7FCE /* WebViewModel.swift in Sources */,
 				834D69A22BA5148400DE0EEF /* Fool.swift in Sources */,
@@ -754,6 +763,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		83610E702BA5D9430074458E /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
 		839599B52BA5254500D998B2 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jamesrochabrun/SwiftOpenAI";
@@ -773,6 +790,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		83610E712BA5D9730074458E /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83610E702BA5D9430074458E /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
 		839599B62BA5257D00D998B2 /* SwiftOpenAI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 839599B52BA5254500D998B2 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */;

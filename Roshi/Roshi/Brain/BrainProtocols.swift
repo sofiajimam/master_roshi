@@ -9,9 +9,10 @@ import Foundation
 
 
 protocol BrainProtocol {
-    func startChallenge() async
-    func help(message: String) async
+    func startChallenge(outputGpt: String) async
+    func help(message: String) async -> String
     func testProject()
+    func getChallenge() async -> String
     func setFool(fool: FoolProtocol)
     func setAssistant(assistant: AssistantProtocol)
 }
