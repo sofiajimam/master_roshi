@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    // Add an instance of Brain
     @StateObject private var fool = Fool()
     @StateObject private var assistant = Assistant()
     @StateObject private var brain = Brain()
-
+    @State private var helpInput: String = ""
 
     var body: some View {
         VStack {
@@ -20,6 +19,16 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
+            TextField("Enter help input", text: $helpInput)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            Button(action: {
+                Task {
+                    await brain.help(message: helpInput)
+                }
+            }) {
+                Text("Get Help")
+            }
             Button(action: {
                 Task {
                     await brain.startChallenge()

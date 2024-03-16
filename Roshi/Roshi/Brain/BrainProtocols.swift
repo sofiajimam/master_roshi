@@ -10,7 +10,7 @@ import Foundation
 
 protocol BrainProtocol {
     func startChallenge() async
-    func help()
+    func help(message: String) async
     func testProject()
     func setFool(fool: FoolProtocol)
     func setAssistant(assistant: AssistantProtocol)
