@@ -1,22 +1,22 @@
 {
-  "originHash" : "04d9e4d8045a6310349928a2f8d2e6c6fe1c41e0c952a800e312800fac9624f9",
+  "originHash" : "4beaba03d5ee297dad7897a317d2babd31e0ee71d40fc0e218616eb6225fbb7e",
   "pins" : [
     {
-      "identity" : "networkimage",
+      "identity" : "swiftdotenv",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/gonzalezreal/NetworkImage",
+      "location" : "https://github.com/SwiftOnTheServer/SwiftDotEnv",
       "state" : {
-        "revision" : "7aff8d1b31148d32c5933d75557d42f6323ee3d1",
-        "version" : "6.0.0"
+        "revision" : "2a7527210766fc726fb3d26fa9b8f295841e73df",
+        "version" : "2.0.1"
       }
     },
     {
-      "identity" : "swift-markdown-ui",
+      "identity" : "swiftopenai",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/gonzalezreal/swift-markdown-ui",
+      "location" : "https://github.com/jamesrochabrun/SwiftOpenAI",
       "state" : {
-        "revision" : "ae799d015a5374708f7b4c85f3294c05f2a564e2",
-        "version" : "2.3.0"
+        "branch" : "main",
+        "revision" : "d36ead6a145107196375a3c5fa420615abf67ab9"
       }
     }
   ],
