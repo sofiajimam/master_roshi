@@ -11,8 +11,10 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack(spacing: 10) {
+                Spacer()
                 SidebarMenuView()
                 RetoScreenView()
+                Spacer()
             }.padding(10)
         }.frame(minWidth: 0,
                 maxWidth: .infinity,

@@ -19,6 +19,7 @@
 		50DFD0B32BA50F9C00429932 /* SidebarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0B22BA50F9C00429932 /* SidebarMenuView.swift */; };
 		50FA223A2BA58FCD00382BB7 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 50FA22392BA58FCD00382BB7 /* MarkdownUI */; };
 		50FA223C2BA5990A00382BB7 /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA223B2BA5990A00382BB7 /* ToolBarView.swift */; };
+		50FA223E2BA5A03100382BB7 /* ChatRoshiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA223D2BA5A03100382BB7 /* ChatRoshiView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		50DFD0A52BA508B500429932 /* RoshiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		50DFD0B22BA50F9C00429932 /* SidebarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarMenuView.swift; sourceTree = "<group>"; };
 		50FA223B2BA5990A00382BB7 /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
+		50FA223D2BA5A03100382BB7 /* ChatRoshiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoshiView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				50DFD0902BA508B500429932 /* Roshi.entitlements */,
 				50DFD08D2BA508B500429932 /* Preview Content */,
 				50DFD0B22BA50F9C00429932 /* SidebarMenuView.swift */,
+				50FA223D2BA5A03100382BB7 /* ChatRoshiView.swift */,
 				508E67BF2BA588C4001F731E /* RetoScreenView.swift */,
 				508E67C12BA58B65001F731E /* MarkdownView.swift */,
 				50FA223B2BA5990A00382BB7 /* ToolBarView.swift */,
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50FA223C2BA5990A00382BB7 /* ToolBarView.swift in Sources */,
+				50FA223E2BA5A03100382BB7 /* ChatRoshiView.swift in Sources */,
 				508E67C02BA588C4001F731E /* RetoScreenView.swift in Sources */,
 				50DFD08A2BA508B400429932 /* ContentView.swift in Sources */,
 				50DFD0B32BA50F9C00429932 /* SidebarMenuView.swift in Sources */,
