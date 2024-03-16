@@ -10,7 +10,7 @@ import WebKit
 import AppKit
 
 struct ContentView: View {
-    //let webView = WebView(viewModel: .init(link: "https://arc.net/"))
+    let webView = WebView(viewModel: .init(link: "https://arc.net/"))
     let bulma = Bulma()
     let vision = Vision()
     
@@ -21,6 +21,24 @@ struct ContentView: View {
         }
         saveScreenshot(image)
     }
+    
+    func saveScreenshot(_ image: NSImage) {
+            DispatchQueue.main.async {
+                let panel = NSSavePanel()
+                panel.allowedContentTypes = [.png]
+                panel.nameFieldStringValue = "screenshot.png"
+                panel.begin { (result) in
+                    if result == NSApplication.ModalResponse.OK {
+                        if let url = panel.url {
+                            if let data = image.tiffRepresentation, let bitmapImage = NSBitmapImageRep(data: data) {
+                                let pngData = bitmapImage.representation(using: .png, properties: [:])
+                                try? pngData?.write(to: url)
+                            }
+                        }
+                    }
+                }
+            }
+        }
     
     func predict() async {
         guard let image = await webView.takeScreenshot() else {
