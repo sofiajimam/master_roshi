@@ -84,6 +84,12 @@ class Bulma {
         let box = memory?.boxes[boxNumber]
         return getBoxCenter(box: box!)
     }
+    
+    func getLastImageBoxPoint(boxNumber: Int ) -> CGPoint {
+        let lastMemory = self.memory.memories.last
+        let box = lastMemory?.boxes[boxNumber]
+        return getBoxCenter(box: box!)
+    }
 }
 
 

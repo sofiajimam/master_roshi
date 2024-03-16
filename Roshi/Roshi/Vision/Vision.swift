@@ -19,13 +19,13 @@ class Vision: VisionProtocol, ObservableObject {
         self.service = OpenAIServiceFactory.service(apiKey: apiKey)
     }
     
-    func startVision(highlightedImage: NSImage, plainImage: NSImage) async {
+    func startVision(highlightedImage: NSImage, plainImage: NSImage) async -> String? {
         do {
-            guard let base64HighlightedImage = imageToBase64(highlightedImage) else { return }
-            guard let base64PlainImage = imageToBase64(highlightedImage) else { return }
+            guard let base64HighlightedImage = imageToBase64(highlightedImage) else { return nil }
+            guard let base64PlainImage = imageToBase64(highlightedImage) else { return nil }
 
-            guard let highlightedImageURL = URL(string: "data:image/jpeg;base64,\(base64HighlightedImage)") else { return }
-            guard let plainImageURL = URL(string: "data:image/jpeg;base64,\(base64PlainImage)") else { return }
+            guard let highlightedImageURL = URL(string: "data:image/jpeg;base64,\(base64HighlightedImage)") else { return nil }
+            guard let plainImageURL = URL(string: "data:image/jpeg;base64,\(base64PlainImage)") else { return nil }
             let messageContent: [ChatCompletionParameters.Message.ContentType.MessageContent] = [.imageUrl(highlightedImageURL), .imageUrl(plainImageURL)]
             
             let parameters = ChatCompletionParameters(messages: [
@@ -35,10 +35,10 @@ class Vision: VisionProtocol, ObservableObject {
             let chatCompletionObject = try await service.startChat(
                 parameters: parameters)
             
-            print("chatCompletionObject")
-            print(chatCompletionObject)
+            return chatCompletionObject.choices[0].message.content;
         } catch {
             print(error)
+            return nil
         }
     }
 

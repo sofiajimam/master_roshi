@@ -13,6 +13,7 @@ struct ContentView: View {
     let webView = WebView(viewModel: .init(link: "https://arc.net/"))
     let bulma = Bulma()
     let vision = Vision()
+    let evaluator =  Evaluator()
     
     func screenshot() async {
         guard let image = await webView.takeScreenshot() else {
@@ -49,24 +50,35 @@ struct ContentView: View {
         print(bulma.predict(image))
     }
     
+    func evaluate() {
+        self.evaluator.attachCallbacks(onClick: { number in
+            let point = bulma.getLastImageBoxPoint(boxNumber: number)
+            await webView.click(point: point)
+            return (await see()) ?? "Unable to get content"
+        }, onView: {
+            return await see() ?? "Unable to get content"
+        })
+            
+    }
+    
     func outlinePredict() async {
         guard let image = await webView.takeScreenshot() else {
             print("Couldn't get image from webbrowser")
             return
         }
         let prediction = bulma.predict(image)
-        let outline = await bulma.mergePredict(image: image, boxes: prediction)
-        saveScreenshot(outline)
+        let output = await bulma.mergePredict(image: image, boxes: prediction)
+        saveScreenshot(output.image)
     }
     
-    func see() async {
+    func see() async -> String? {
         guard let image = await webView.takeScreenshot() else {
             print("Couldn't get image from webbrowser")
-            return
+            return nil
         }
         let prediction = bulma.predict(image)
-        let outline = await bulma.mergePredict(image: image, boxes: prediction)
-        await vision.startVision(highlightedImage: outline, plainImage:image)
+        let output = await bulma.mergePredict(image: image, boxes: prediction)
+        return await vision.startVision(highlightedImage: output.image, plainImage:image)
     }
 
 
@@ -97,21 +109,22 @@ struct ContentView: View {
             }
             
         }
-        .padding()
-            HStack(spacing: 10) {
-                Spacer()
-                SidebarMenuView()
+        //.padding()
+          //  HStack(spacing: 10) {
+            //    Spacer()
+                // SidebarMenuView()
 //                RetoScreenView()
-                NewChallengeView()
-                Spacer()
-            }.padding(10)
-        }.frame(minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity,
-                alignment: .topLeading)
+              //  NewChallengeView()
+                //Spacer()
+            // }.padding(10)
+        // }.frame(minWidth: 0,
+           //     maxWidth: .infinity,
+             //   minHeight: 0,
+               // maxHeight: .infinity,
+                //alignment: .topLeading)
     }
 }
+
 #Preview {
     ContentView()
 }
