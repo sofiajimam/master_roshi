@@ -12,7 +12,6 @@ struct ContentView: View {
         VStack {
             HStack(spacing: 10) {
                 SidebarMenuView()
-                SidebarMenuView()
             }.padding(10)
         }.frame(minWidth: 0,
                 maxWidth: .infinity,
