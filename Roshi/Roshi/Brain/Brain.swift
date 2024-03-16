@@ -48,9 +48,10 @@ class Brain: BrainProtocol, ObservableObject {
         }
     }
 
-    func help() {
+    func help(message: String) async {
         // Get help from the assistant
-        sendMessageToMentorAssistant(message: "I need help")
+        output = await sendMessageToMentorAssistant(message: message)
+        print("Help from mentor assistant: \(output ?? "")")
     }
 
     func setFool(fool: FoolProtocol) {
@@ -75,7 +76,13 @@ class Brain: BrainProtocol, ObservableObject {
         }
     }
 
-    private func sendMessageToMentorAssistant(message: String) {
-        assistant.mentorAssistant(message: message)
+    private func sendMessageToMentorAssistant(message: String) async -> String {
+        do {
+            output = try await assistant.mentorAssistant(message: message)
+            print("sent message to command assistant: \(message)")
+            return output ?? ""
+        } catch {
+            print("Failed to send message to command assistant: \(error)")
+        }
     }
 }

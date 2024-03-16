@@ -7,12 +7,36 @@
 
 import Foundation
 import Network
+import AppKit
+
 
 class Fool: FoolProtocol, ObservableObject {
+    let fileManager = FileManager.default
+
+    @discardableResult
+    func shell(_ command: String...) -> Int32 {
+        let task = Process()
+        task.launchPath = "/bin/zsh"
+        task.arguments = ["-c", "echo '' | " + command.joined(separator: " ")]
+        var environment = ProcessInfo.processInfo.environment // Get current environment
+        environment["PATH"] = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin" // Append Homebrew path
+        task.environment = environment
+        task.launch()
+        task.waitUntilExit()
+        return task.terminationStatus
+    }
 
     func executeCommand(command: String) {
-        // Implementation of command execution
+        // navigate to document directory and execute the command
+        let status = shell("cd ~/Documents && echo '' | \(command)")
+        if status == 0 {
+            // TODO: send a message to the chat saying is done and to check Documents folder
+            print("Done")
+        } else {
+            print("Command failed with exit code \(status)")
+        }
     }
+
 
     func testProject() {
         let portToCheck = 3000
