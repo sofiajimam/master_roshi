@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ToolBarView: View {
+    let evaluate: () async -> Void
     var body: some View {
         HStack{
             Spacer()
@@ -33,9 +34,18 @@ struct ToolBarView: View {
             Spacer()
             
             HStack{
-                Image("Check")
-                Text("Evaluar").font(Font.custom("SF Pro Display", size: 16).weight(.medium))
-                    .foregroundColor(Color.white)
+                Button(action: {
+                    Task {
+                        await evaluate()
+                    }
+                }) {
+                    HStack {
+                        Image("Check")
+                        Text("Evaluar")
+                            .font(Font.custom("SF Pro Display", size: 16).weight(.medium))
+                            .foregroundColor(Color.white)
+                    }
+                }
             }.padding(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12))
                 .frame(width: 104, height: 38)
                 .background(Color(red: 0, green: 0.48, blue: 1))
@@ -51,5 +61,5 @@ struct ToolBarView: View {
 }
 
 #Preview {
-    ToolBarView()
+    ToolBarView(evaluate: {})
 }

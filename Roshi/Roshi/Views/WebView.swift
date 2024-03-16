@@ -30,13 +30,7 @@ struct WebView: NSViewRepresentable {
     }
     
     public func click(point: CGPoint) {
-<<<<<<< HEAD
         let script = "document.elementFromPoint(\(point.x), \(point.y)).click();"
-=======
-        let x = point.x
-        let y = point.y
-        let script = "document.elementFromPoint(\(x), \(y)).click();"
->>>>>>> e0f200d3c780e4a09eecb21df7db1030da9c313f
         webView.evaluateJavaScript(script, completionHandler: nil)
     }
     

@@ -9,8 +9,9 @@ import Foundation
 import SwiftOpenAI
 
 protocol EvaluatorProtocol {
-    func commandAssistant(message: String) async -> String
-    func mentorAssistant(message: String) async -> String
+    func attachCallbacks(onClick: @escaping (Int) async -> String, onView: @escaping () async -> String)
     func retrieveAssistant() async throws -> AssistantObject
     func createThread() async throws -> ThreadObject
+    func callTool(_ tool: String?, arguments: String?) async -> String
+    func trigger(challenge: String) async
 }

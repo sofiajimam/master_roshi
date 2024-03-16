@@ -13,14 +13,14 @@ struct ContentView: View {
     let webView = WebView(viewModel: .init(link: "https://arc.net/"))
     let bulma = Bulma()
     let vision = Vision()
-<<<<<<< HEAD
     let evaluator =  Evaluator()
-=======
     let brain = Brain()
+    @State private var isWebViewVisible: Bool = false
+
+    
 
     @State private var markdownContent: String = ""
 
->>>>>>> e0f200d3c780e4a09eecb21df7db1030da9c313f
     
     func screenshot() async {
         guard let image = await webView.takeScreenshot() else {
@@ -57,59 +57,42 @@ struct ContentView: View {
         print(bulma.predict(image))
     }
     
-<<<<<<< HEAD
-    func evaluate() {
-        self.evaluator.attachCallbacks(onClick: { number in
+    func evaluate() async {
+        await outlinePredict()
+        self.evaluator.attachCallbacks(onClick: { number async in
             let point = bulma.getLastImageBoxPoint(boxNumber: number)
             await webView.click(point: point)
-            return (await see()) ?? "Unable to get content"
-        }, onView: {
+            return await see() ?? "Unable to get content"
+        }, onView: { 
             return await see() ?? "Unable to get content"
         })
-            
     }
     
     func outlinePredict() async {
-=======
-   /* func outlinePredict() async {
->>>>>>> e0f200d3c780e4a09eecb21df7db1030da9c313f
         guard let image = await webView.takeScreenshot() else {
             print("Couldn't get image from webbrowser")
             return
         }
         let prediction = bulma.predict(image)
-<<<<<<< HEAD
         let output = await bulma.mergePredict(image: image, boxes: prediction)
         saveScreenshot(output.image)
     }
     
     func see() async -> String? {
-=======
-        let outline = await bulma.mergePredict(image: image, boxes: prediction)
-        saveScreenshot(outline)
-    } */
-    
-    /* func see() async {
->>>>>>> e0f200d3c780e4a09eecb21df7db1030da9c313f
         guard let image = await webView.takeScreenshot() else {
             print("Couldn't get image from webbrowser")
             return nil
         }
         let prediction = bulma.predict(image)
-<<<<<<< HEAD
         let output = await bulma.mergePredict(image: image, boxes: prediction)
         return await vision.startVision(highlightedImage: output.image, plainImage:image)
     }
-=======
-        let outline = await bulma.mergePredict(image: image, boxes: prediction)
-        await vision.startVision(highlightedImage: outline, plainImage:image)
-    } */
->>>>>>> e0f200d3c780e4a09eecb21df7db1030da9c313f
 
 
     var body: some View {
         VStack {
-            /* VStack {
+            if isWebViewVisible {
+            VStack {
                 webView
                 HStack {
                     Button("Take screenshot") {
@@ -133,39 +116,31 @@ struct ContentView: View {
                         await see()
                     }
                 }
-            } */
-            //.padding()
-            
-<<<<<<< HEAD
-        }
-        //.padding()
-          //  HStack(spacing: 10) {
-            //    Spacer()
-                // SidebarMenuView()
-//                RetoScreenView()
-              //  NewChallengeView()
-                //Spacer()
-            // }.padding(10)
-        // }.frame(minWidth: 0,
-           //     maxWidth: .infinity,
-             //   minHeight: 0,
-               // maxHeight: .infinity,
-                //alignment: .topLeading)
-=======
-            HStack(spacing: 10) {
-                Spacer()
-                SidebarMenuView()
-                //RetoScreenView()
-                VStack {
-                    MarkdownView()
-                    ToolBarView()
+                Button("Close WebView") {
+                    isWebViewVisible = false
                 }
-                ChatRoshiView(brain: brain)
-                
-                //NewChallengeView()
-                Spacer()
             }
+            .padding()
+        } else {
+        HStack(spacing: 10) {
+                        Spacer()
+                        SidebarMenuView()
+                        //RetoScreenView()
+                        VStack {
+                            MarkdownView()
+                            ToolBarView(evaluate: evaluate)
+                        }
+                        ChatRoshiView(brain: brain)
+                        
+                        //NewChallengeView()
+                        Spacer()
+                        Button("Open WebView") {
+                            isWebViewVisible = true
+                        }
+                    }
             .padding(10)
+        }
+            
         }
         .frame(minWidth: 0,
                maxWidth: .infinity,
@@ -173,9 +148,7 @@ struct ContentView: View {
                maxHeight: .infinity,
                alignment: .topLeading)
         
->>>>>>> e0f200d3c780e4a09eecb21df7db1030da9c313f
     }
-    
 }
 
 #Preview {
