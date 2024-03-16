@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		447104A32BA59DC500759C36 /* SegmentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447104A22BA59DC500759C36 /* SegmentedView.swift */; };
 		448373F42BA56B9B002B7FCE /* Bulma.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448373F32BA56B9B002B7FCE /* Bulma.swift */; };
 		448373F62BA5707E002B7FCE /* Bulma - Iteration 18900.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 448373F52BA5707E002B7FCE /* Bulma - Iteration 18900.mlmodel */; };
 		448373F92BA57347002B7FCE /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448373F82BA57347002B7FCE /* WebView.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		447104A22BA59DC500759C36 /* SegmentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedView.swift; sourceTree = "<group>"; };
 		448373F32BA56B9B002B7FCE /* Bulma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bulma.swift; sourceTree = "<group>"; };
 		448373F52BA5707E002B7FCE /* Bulma - Iteration 18900.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Bulma - Iteration 18900.mlmodel"; sourceTree = "<group>"; };
 		448373F82BA57347002B7FCE /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				448373F52BA5707E002B7FCE /* Bulma - Iteration 18900.mlmodel */,
 				448373F32BA56B9B002B7FCE /* Bulma.swift */,
+				447104A22BA59DC500759C36 /* SegmentedView.swift */,
 			);
 			path = Bulma;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				448373F42BA56B9B002B7FCE /* Bulma.swift in Sources */,
 				834D69A42BA5148F00DE0EEF /* FoolProtocols.swift in Sources */,
 				834D69A92BA514CA00DE0EEF /* AssistantProtocols.swift in Sources */,
+				447104A32BA59DC500759C36 /* SegmentedView.swift in Sources */,
 				448373F62BA5707E002B7FCE /* Bulma - Iteration 18900.mlmodel in Sources */,
 				83F7A40F2BA5A2A900003C96 /* VisionProtocols.swift in Sources */,
 				834D69A72BA514C000DE0EEF /* Assistant.swift in Sources */,
