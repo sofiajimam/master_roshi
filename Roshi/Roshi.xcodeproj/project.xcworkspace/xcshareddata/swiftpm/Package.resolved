@@ -1,6 +1,15 @@
 {
-  "originHash" : "4d5b735fb4ce761349124a905586c7ffe2d7474b2b2a43b5c210bec311d7c12f",
+  "originHash" : "79634812b00996032b993059d53b3658c182ea5892eef982c63e4d188b7e107a",
   "pins" : [
+    {
+      "identity" : "swiftdotenv",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftOnTheServer/SwiftDotEnv",
+      "state" : {
+        "revision" : "2a7527210766fc726fb3d26fa9b8f295841e73df",
+        "version" : "2.0.1"
+      }
+    },
     {
       "identity" : "swiftopenai",
       "kind" : "remoteSourceControl",

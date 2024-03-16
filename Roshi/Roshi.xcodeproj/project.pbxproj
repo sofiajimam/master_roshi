@@ -21,6 +21,9 @@
 		834D69A72BA514C000DE0EEF /* Assistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D69A62BA514C000DE0EEF /* Assistant.swift */; };
 		834D69A92BA514CA00DE0EEF /* AssistantProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D69A82BA514CA00DE0EEF /* AssistantProtocols.swift */; };
 		839599B72BA5257D00D998B2 /* SwiftOpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 839599B62BA5257D00D998B2 /* SwiftOpenAI */; };
+		83D3CCF72BA5985200D5FCD5 /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = 83D3CCF62BA5985200D5FCD5 /* SwiftDotEnv */; };
+		83D3CCF92BA5992500D5FCD5 /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = 83D3CCF82BA5992500D5FCD5 /* SwiftDotEnv */; };
+		83D3CCFB2BA59A2700D5FCD5 /* SwiftDotEnv in Frameworks */ = {isa = PBXBuildFile; productRef = 83D3CCFA2BA59A2700D5FCD5 /* SwiftDotEnv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D3CCF72BA5985200D5FCD5 /* SwiftDotEnv in Frameworks */,
 				839599B72BA5257D00D998B2 /* SwiftOpenAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D3CCF92BA5992500D5FCD5 /* SwiftDotEnv in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D3CCFB2BA59A2700D5FCD5 /* SwiftDotEnv in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +205,7 @@
 			name = Roshi;
 			packageProductDependencies = (
 				839599B62BA5257D00D998B2 /* SwiftOpenAI */,
+				83D3CCF62BA5985200D5FCD5 /* SwiftDotEnv */,
 			);
 			productName = Roshi;
 			productReference = 50DFD0842BA508B400429932 /* Roshi.app */;
@@ -218,6 +225,9 @@
 				50DFD0972BA508B500429932 /* PBXTargetDependency */,
 			);
 			name = RoshiTests;
+			packageProductDependencies = (
+				83D3CCF82BA5992500D5FCD5 /* SwiftDotEnv */,
+			);
 			productName = RoshiTests;
 			productReference = 50DFD0952BA508B500429932 /* RoshiTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -236,6 +246,9 @@
 				50DFD0A12BA508B500429932 /* PBXTargetDependency */,
 			);
 			name = RoshiUITests;
+			packageProductDependencies = (
+				83D3CCFA2BA59A2700D5FCD5 /* SwiftDotEnv */,
+			);
 			productName = RoshiUITests;
 			productReference = 50DFD09F2BA508B500429932 /* RoshiUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -274,6 +287,7 @@
 			mainGroup = 50DFD07B2BA508B400429932;
 			packageReferences = (
 				839599B52BA5254500D998B2 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */,
+				83D3CCF52BA5985200D5FCD5 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */,
 			);
 			productRefGroup = 50DFD0852BA508B400429932 /* Products */;
 			projectDirPath = "";
@@ -647,6 +661,14 @@
 				kind = branch;
 			};
 		};
+		83D3CCF52BA5985200D5FCD5 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftOnTheServer/SwiftDotEnv";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -654,6 +676,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 839599B52BA5254500D998B2 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */;
 			productName = SwiftOpenAI;
+		};
+		83D3CCF62BA5985200D5FCD5 /* SwiftDotEnv */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83D3CCF52BA5985200D5FCD5 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */;
+			productName = SwiftDotEnv;
+		};
+		83D3CCF82BA5992500D5FCD5 /* SwiftDotEnv */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83D3CCF52BA5985200D5FCD5 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */;
+			productName = SwiftDotEnv;
+		};
+		83D3CCFA2BA59A2700D5FCD5 /* SwiftDotEnv */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83D3CCF52BA5985200D5FCD5 /* XCRemoteSwiftPackageReference "SwiftDotEnv" */;
+			productName = SwiftDotEnv;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

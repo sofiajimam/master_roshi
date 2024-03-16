@@ -8,6 +8,7 @@
 import Foundation
 import SwiftOpenAI
 import SwiftUI
+//import SwiftDotEnv
 
 class Assistant: AssistantProtocol, ObservableObject {
     private let service: OpenAIService
