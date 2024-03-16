@@ -11,7 +11,19 @@ import SwiftUI
 struct RoshiApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-        }
+            ContentView().background(VisualEffectView().ignoresSafeArea())
+        }.windowStyle(.hiddenTitleBar)
+    }
+}
+
+
+struct VisualEffectView: NSViewRepresentable {
+    func makeNSView(context: Context) -> NSVisualEffectView {
+        let effectView = NSVisualEffectView()
+        effectView.state = .active
+        return effectView
+    }
+
+    func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
     }
 }
