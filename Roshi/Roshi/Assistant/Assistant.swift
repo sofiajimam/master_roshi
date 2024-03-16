@@ -125,6 +125,9 @@ class Assistant: AssistantProtocol, ObservableObject {
                 // Sleep for 1 second
                 try await Task.sleep(nanoseconds: 1_000_000_000 / 3) // 1 second = 1_000_000_000 nanoseconds
                 run = try await service.retrieveRun(threadID: thread?.id ?? "nil", runID: run?.id ?? "nil")
+                print("RUNNNNNN")
+                print(run?.requiredAction?.submitToolsOutputs.toolCalls.first?.function.arguments)
+                
             } catch {
                 print("Failed to retrieve run: \(error)")
             }
@@ -142,7 +145,15 @@ class Assistant: AssistantProtocol, ObservableObject {
             }
         } else if run?.status == "requires_action" && run?.requiredAction?.type == "submit_tool_outputs" {
             // TODO: sends that it needs action and it asks the brain for the success
-            print(run?.status)
+            if let arguments = run?.requiredAction?.submitToolsOutputs.toolCalls.first?.function.arguments,
+               let data = arguments.data(using: .utf8),
+               let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
+               let dictionary = jsonObject as? [String: Any],
+               let command = dictionary["command"] as? String {
+                print("Command: \(command)")
+                return command
+            }
+            
         }
 
         // Step 6
