@@ -6,8 +6,24 @@
 //
 
 import SwiftUI
+import Combine
+
+struct Message: Identifiable {
+    let id = UUID()
+    let text: String
+    let sender: Sender
+
+    enum Sender {
+        case user
+        case assistant
+    }
+}
 
 struct ChatRoshiView: View {
+    @State private var userInput: String = ""
+    @State var messages: [Message] = []
+    let brain: Brain
+
     
     var body: some View {
         VStack {
@@ -21,12 +37,43 @@ struct ChatRoshiView: View {
                 .frame(width: 400, height: 43)
                 .background(Color(red: 0.56, green: 0.56, blue: 0.58).opacity(0.20));
             ScrollView{
-                
+                ForEach(messages, id: \.id) { message in
+                HStack {
+                    if message.sender == .assistant {
+                        Text(message.text)
+                            .foregroundColor(.black)
+                            .padding()
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(10)
+                        Spacer()
+                    } else {
+                        Spacer()
+                        Text(message.text)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                    }
+                }.padding(.horizontal)
+            }
             }
             Spacer()
-            HStack{
-                HStack{
-                    //Aqui va un input!!
+            HStack {
+                TextField("Enter message", text: $userInput)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .foregroundColor(.black)
+                Button(action: {
+                    Task {
+                        let response = await brain.help(message: userInput)
+                        DispatchQueue.main.async {
+                            messages.append(Message(text: response, sender: .assistant))
+                            messages.append(Message(text: userInput, sender: .user))
+                            userInput = ""
+                        }
+                    }
+                }) {
+                    Text("Send")
+                    .foregroundColor(.black)
                 }
             }.padding(16)
                 .frame(width: 400, height: 74)
@@ -45,5 +92,5 @@ struct ChatRoshiView: View {
 }
 
 #Preview {
-    ChatRoshiView()
+    ChatRoshiView(brain: Brain())
 }

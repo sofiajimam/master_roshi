@@ -11,6 +11,7 @@ import SwiftUI
 //import SwiftDotEnv
 
 class Assistant: AssistantProtocol, ObservableObject {
+    
     private let service: OpenAIService
     var assistant: AssistantObject?
     let assistantID = "asst_wPKWvQlsnjtzqajk8gQIhFlu"
@@ -18,7 +19,7 @@ class Assistant: AssistantProtocol, ObservableObject {
     var threadMentor: ThreadObject?
 
     init() {
-        let apiKey = "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"
+        let apiKey = "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"
         self.service = OpenAIServiceFactory.service(apiKey: apiKey)
         Task.init {
             do {
@@ -52,22 +53,6 @@ class Assistant: AssistantProtocol, ObservableObject {
             throw error
         }
     }
-    
-    func createAssistant() async throws {
-        let parameters = AssistantParameters(
-            action: .create(model: "gpt-3.5-turbo"),
-            name: "My Assistant",
-            description: "This is my assistant",
-            tools: [AssistantObject.Tool(type: .codeInterpreter)]
-        )
-
-        do {
-            assistant = try await service.createAssistant(parameters: parameters)
-        } catch {
-            debugPrint("\(error)")
-        }
-    }
-    
 
     func commandAssistant(message: String) async -> String {
         var challenge: String = message
@@ -92,8 +77,7 @@ class Assistant: AssistantProtocol, ObservableObject {
         
         // Step 6
         // create a message
-        // TODO: change the prompt with the description or the challenge
-        let prompt = challenge + " .Run the command to create a react app."
+        let prompt = " .Run the command to create the basic setup for the next project: " + challenge
         let threadID = threadCommand?.id
         let parametersMessage = MessageParameter(role: .user, content: prompt)
         
@@ -156,6 +140,64 @@ class Assistant: AssistantProtocol, ObservableObject {
         return "Assistant received command: \(message)"
 
     }
+
+    func askGPT3(message prompt: String) async throws -> String {
+    // Create a new thread
+    let thread = try await createThread()
+    
+    // Create a message with the prompt
+    let parametersMessage = MessageParameter(role: .user, content: prompt)
+    do {
+        let message = try await service.createMessage(threadID: thread.id, parameters: parametersMessage)
+        
+        // Create a run
+        let parametersRun = RunParameter(assistantID: assistantID)
+        var run = try await service.createRun(threadID: thread.id, parameters: parametersRun)
+        
+        // Monitor the run
+        while run.status == "queued" || run.status == "in_progress" || run.status == "cancelling" {
+            // Sleep for a short duration before retrying
+            try await Task.sleep(nanoseconds: 1_000_000_000 / 3) // Adjust the sleep duration as needed
+            run = try await service.retrieveRun(threadID: thread.id, runID: run.id)
+        }
+        
+        // Retrieve the output when the run is completed
+        if run.status == "completed" {
+            let messages = try await service.listMessages(threadID: thread.id, limit: nil, order: nil, after: nil, before: nil)
+            for message in messages.data {
+                if message.role == "assistant" {
+                    if let content = message.content.first, case let .text(textContent) = content {
+                        if let arguments = run.requiredAction?.submitToolsOutputs.toolCalls.first?.function.arguments,
+                        let data = arguments.data(using: .utf8),
+                        let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
+                        let dictionary = jsonObject as? [String: Any],
+                        let command = dictionary["command"] as? String {
+                            print("Command: \(command)")
+                            return command
+                        }
+                    }
+                }
+            }
+        } else if run.status == "requires_action" && run.requiredAction?.type == "submit_tool_outputs" {
+            // TODO: sends that it needs action and it asks the brain for the success
+            if let arguments = run.requiredAction?.submitToolsOutputs.toolCalls.first?.function.arguments,
+               let data = arguments.data(using: .utf8),
+               let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
+               let dictionary = jsonObject as? [String: Any],
+               let command = dictionary["command"] as? String {
+                print("Command: \(command)")
+                return command
+            }
+        } else {
+            print("Run status: \(run.status ?? "nil")")
+        }
+    } catch {
+        print("Failed to ask GPT-3: \(error)")
+        throw error
+    }
+    
+    return "No response from GPT-3"
+}
 
     func mentorAssistant(message: String) async -> String {
         let response: String = message
@@ -243,6 +285,7 @@ class Assistant: AssistantProtocol, ObservableObject {
                 }
                 
                 print("First assistant message: \(firstAssistantMessage)")
+                return firstAssistantMessage
             } catch {
                 print("Failed to list messages: \(error)")
             }

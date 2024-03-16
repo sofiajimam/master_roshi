@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NewChallengeView: View {
+    @State private var markdownContent: String = ""
+
     var body: some View {
         VStack{
             Spacer()
@@ -24,9 +26,15 @@ struct NewChallengeView: View {
             
             HStack(spacing: 10) {
             
-                  Text("Generar mi reto")
-                    .font(Font.custom("SF Pro Display", size: 16).weight(.medium))
-                    .foregroundColor(.white)
+                  Button(action: {
+                        Task {
+                            await Brain().getChallenge()
+                        }
+                    }) {
+                        Text("Generar mi reto")
+                            .font(Font.custom("SF Pro Display", size: 16).weight(.medium))
+                            .foregroundColor(.white)
+                    }
                 }
                 .padding(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12))
                 .frame(width: 130, height: 38)

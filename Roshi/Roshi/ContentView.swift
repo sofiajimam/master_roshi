@@ -12,7 +12,11 @@ import AppKit
 struct ContentView: View {
     let webView = WebView(viewModel: .init(link: "https://arc.net/"))
     let bulma = Bulma()
-    //let vision = Vision()
+    let vision = Vision()
+    let brain = Brain()
+
+    @State private var markdownContent: String = ""
+
     
     func screenshot() async {
         guard let image = await webView.takeScreenshot() else {
@@ -49,7 +53,7 @@ struct ContentView: View {
         print(bulma.predict(image))
     }
     
-    func outlinePredict() async {
+   /* func outlinePredict() async {
         guard let image = await webView.takeScreenshot() else {
             print("Couldn't get image from webbrowser")
             return
@@ -57,9 +61,9 @@ struct ContentView: View {
         let prediction = bulma.predict(image)
         let outline = await bulma.mergePredict(image: image, boxes: prediction)
         saveScreenshot(outline)
-    }
+    } */
     
-    func see() async {
+    /* func see() async {
         guard let image = await webView.takeScreenshot() else {
             print("Couldn't get image from webbrowser")
             return
@@ -67,12 +71,12 @@ struct ContentView: View {
         let prediction = bulma.predict(image)
         let outline = await bulma.mergePredict(image: image, boxes: prediction)
         await vision.startVision(highlightedImage: outline, plainImage:image)
-    }
+    } */
 
 
     var body: some View {
         VStack {
-            VStack {
+            /* VStack {
                 webView
                 HStack {
                     Button("Take screenshot") {
@@ -96,14 +100,20 @@ struct ContentView: View {
                         await see()
                     }
                 }
-            }
-            .padding()
+            } */
+            //.padding()
             
             HStack(spacing: 10) {
                 Spacer()
                 SidebarMenuView()
                 //RetoScreenView()
-                NewChallengeView()
+                VStack {
+                    MarkdownView()
+                    ToolBarView()
+                }
+                ChatRoshiView(brain: brain)
+                
+                //NewChallengeView()
                 Spacer()
             }
             .padding(10)
@@ -113,6 +123,7 @@ struct ContentView: View {
                minHeight: 0,
                maxHeight: .infinity,
                alignment: .topLeading)
+        
     }
     
 }

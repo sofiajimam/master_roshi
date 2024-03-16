@@ -10,7 +10,7 @@ import SwiftOpenAI
 import SwiftUI
 //import SwiftDotEnv
 
-class Assistant: AssistantProtocol, ObservableObject {
+class Evaluator: EvaluatorProtocol, ObservableObject {
     private let service: OpenAIService
     var assistant: AssistantObject?
     let assistantID = "asst_wPKWvQlsnjtzqajk8gQIhFlu"
@@ -50,21 +50,6 @@ class Assistant: AssistantProtocol, ObservableObject {
         } catch {
             debugPrint("\(error)")
             throw error
-        }
-    }
-    
-    func createAssistant() async throws {
-        let parameters = AssistantParameters(
-            action: .create(model: "gpt-3.5-turbo"),
-            name: "My Assistant",
-            description: "This is my assistant",
-            tools: [AssistantObject.Tool(type: .codeInterpreter)]
-        )
-
-        do {
-            assistant = try await service.createAssistant(parameters: parameters)
-        } catch {
-            debugPrint("\(error)")
         }
     }
     

@@ -12,6 +12,8 @@ class Brain: BrainProtocol, ObservableObject {
     private var assistant: AssistantProtocol
 
     var output: String?
+    var outputMarkdown: String?
+    var outputMentor: String?
 
     init() {
         self.fool = Fool()
@@ -19,15 +21,14 @@ class Brain: BrainProtocol, ObservableObject {
     }
     
 
-    func startChallenge() async {
+
+    func startChallenge(outputGpt: String) async {
         // Start the challenge
 
         // Step 1
         // Get the part of the visual content in the UI
-        // Mark down
-        
-        // TODO: Modify this with more prompt -> add the results or what is expected
-        var challenge = "the challenge is about a basic todo list react web application for beginners."
+        // Mark down        
+        var challenge = outputGpt
 
         // Step 2
         // send message to asssitant commands
@@ -48,9 +49,17 @@ class Brain: BrainProtocol, ObservableObject {
         }
     }
 
-    func help(message: String) async {
+    func getChallenge() async -> String {
+        outputMarkdown = await sendMessageToChallengeAssistant(message: "I need a challenge")
+        await startChallenge(outputGpt: outputMarkdown ?? "")
+        return outputMarkdown ?? ""
+        print("Challenge from challenge assistant: \(output ?? "")")
+    }
+
+    func help(message: String) async  -> String{
         // Get help from the assistant
         output = await sendMessageToMentorAssistant(message: message)
+        return output ?? ""
         print("Help from mentor assistant: \(output ?? "")")
     }
 
@@ -76,11 +85,23 @@ class Brain: BrainProtocol, ObservableObject {
         }
     }
 
-    private func sendMessageToMentorAssistant(message: String) async -> String {
+    private func sendMessageToChallengeAssistant(message: String) async -> String {
         do {
-            output = try await assistant.mentorAssistant(message: message)
+            output = try await assistant.askGPT3(message: "Give me the description, title, results of what i am expecting of a basic todo-app react app, give me the general description, what technologies i will use. Everything in Markdown Style")
             print("sent message to command assistant: \(message)")
             return output ?? ""
+        } catch {
+            print("Failed to send message to command assistant: \(error)")
+        }
+        
+        return output ?? ""
+    }
+
+    private func sendMessageToMentorAssistant(message: String) async -> String {
+        do {
+            outputMentor = try await assistant.mentorAssistant(message: message)
+            print("sent message to command assistant: \(outputMentor)")
+            return outputMentor ?? ""
         } catch {
             print("Failed to send message to command assistant: \(error)")
         }
