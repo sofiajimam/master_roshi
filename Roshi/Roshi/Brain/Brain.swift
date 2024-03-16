@@ -7,32 +7,50 @@
 
 import Foundation
 
-class Brain: BrainProtocol {
-    private var fool: FoolProtocol?
-    private var assistant: AssistantProtocol?
+class Brain: BrainProtocol, ObservableObject {
+    private var fool: FoolProtocol
+    private var assistant: AssistantProtocol
 
     var output: String?
+
+    init() {
+        self.fool = Fool()
+        self.assistant = Assistant()
+    }
     
 
-    func startChallenge() {
+    func startChallenge() async {
         // Start the challenge
 
         // Step 1
         // Get the part of the visual content in the UI
         // Mark down
+        
+        // TODO: Modify this with more prompt -> add the results or what is expected
+        var challenge = "the challenge is about a basic todo list react web application for beginners."
 
         // Step 2
-       // send message to asssitant commands
-        output = sendMessageToCommandAssistant(message: "Start the challenge")
+        // send message to asssitant commands
+        // Step 2
+        // send message to assistant commands
+        do {
+            output = try await sendMessageToCommandAssistant(message: challenge)
+        } catch {
+            print("Failed to send message to command assistant: \(error)")
+        }
 
         // Step 3
         // tell the fool to run the command
-        fool?.executeCommand(output)
+        if let command = output {
+            fool.executeCommand(command: command)
+        } else {
+            print("Output is nil")
+        }
     }
 
     func help() {
         // Get help from the assistant
-        sendMessageToMentorAssistant("I need help")
+        sendMessageToMentorAssistant(message: "I need help")
     }
 
     func setFool(fool: FoolProtocol) {
@@ -44,14 +62,20 @@ class Brain: BrainProtocol {
     }
 
     func testProject() {
-        fool?.testProject()
+        fool.testProject()
     }
 
-    private func sendMessageToCommandAssistant(message: String) {
-        assistant?.commandAssistant(message)
+    private func sendMessageToCommandAssistant(message: String) async -> String {
+        do {
+            output = try await assistant.commandAssistant(message: message)
+            print("sent message to command assistant: \(message)")
+            return output ?? ""
+        } catch {
+            print("Failed to send message to command assistant: \(error)")
+        }
     }
 
     private func sendMessageToMentorAssistant(message: String) {
-        assistant?.mentorAssistant(message)
+        assistant.mentorAssistant(message: message)
     }
 }

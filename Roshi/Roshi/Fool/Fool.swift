@@ -8,7 +8,7 @@
 import Foundation
 import Network
 
-class Fool: FoolProtocol {
+class Fool: FoolProtocol, ObservableObject {
 
     func executeCommand(command: String) {
         // Implementation of command execution
