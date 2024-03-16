@@ -13,11 +13,6 @@ struct ContentView: View {
     @StateObject private var assistant = Assistant()
     @StateObject private var brain = Brain()
 
-    init() {
-        brain.setAssistant(assistant: assistant)
-        brain.setFool(fool: fool)
-    }
-
 
     var body: some View {
         VStack {
@@ -34,6 +29,10 @@ struct ContentView: View {
             }
         }
         .padding()
+        .onAppear {
+            brain.setAssistant(assistant: assistant)
+            brain.setFool(fool: fool)
+        }
     }
 }
 #Preview {
