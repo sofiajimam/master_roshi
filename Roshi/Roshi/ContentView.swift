@@ -13,7 +13,7 @@ struct ContentView: View {
     let webView = WebView(viewModel: .init(link: "https://arc.net/"))
     let bulma = Bulma()
     
-    func screenshot() async -> Void {
+    func screenshot() async {
         guard let image = await webView.takeScreenshot() else {
             print("Couldn't get image from webbrowser")
             return
@@ -21,8 +21,23 @@ struct ContentView: View {
         saveScreenshot(image)
     }
     
-    func predict() {
+    func predict() async {
+        guard let image = await webView.takeScreenshot() else {
+            print("Couldn't get image from webbrowser")
+            return
+        }
         
+        print(bulma.predict(image))
+    }
+    
+    func outlinePredict() async {
+        guard let image = await webView.takeScreenshot() else {
+            print("Couldn't get image from webbrowser")
+            return
+        }
+        let prediction = bulma.predict(image)
+        let outline = await bulma.mergePredict(image: image, boxes: prediction)
+        saveScreenshot(outline)
     }
     
     func saveScreenshot(_ image: NSImage) {
@@ -47,11 +62,24 @@ struct ContentView: View {
     var body: some View {
         VStack {
             webView
-            Button("Take screenshot") {
-                Task {
-                    await screenshot()
+            HStack {
+                Button("Take screenshot") {
+                    Task {
+                        await screenshot()
+                    }
+                }
+                Button("Predict screenshot") {
+                    Task {
+                        await predict()
+                    }
+                }
+                Button("Outline screenshot") {
+                    Task {
+                        await outlinePredict()
+                    }
                 }
             }
+            
         }
         .padding()
     }
