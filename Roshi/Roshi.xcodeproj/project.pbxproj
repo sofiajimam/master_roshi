@@ -14,6 +14,13 @@
 		50DFD09A2BA508B500429932 /* RoshiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0992BA508B500429932 /* RoshiTests.swift */; };
 		50DFD0A42BA508B500429932 /* RoshiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0A32BA508B500429932 /* RoshiUITests.swift */; };
 		50DFD0A62BA508B500429932 /* RoshiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0A52BA508B500429932 /* RoshiUITestsLaunchTests.swift */; };
+		8315CC122BA50C41000205E9 /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8315CC112BA50C41000205E9 /* Brain.swift */; };
+		834D699E2BA5143C00DE0EEF /* BrainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D699D2BA5143C00DE0EEF /* BrainProtocols.swift */; };
+		834D69A22BA5148400DE0EEF /* Fool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D69A12BA5148400DE0EEF /* Fool.swift */; };
+		834D69A42BA5148F00DE0EEF /* FoolProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D69A32BA5148F00DE0EEF /* FoolProtocols.swift */; };
+		834D69A72BA514C000DE0EEF /* Assistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D69A62BA514C000DE0EEF /* Assistant.swift */; };
+		834D69A92BA514CA00DE0EEF /* AssistantProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834D69A82BA514CA00DE0EEF /* AssistantProtocols.swift */; };
+		839599B72BA5257D00D998B2 /* SwiftOpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 839599B62BA5257D00D998B2 /* SwiftOpenAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,12 @@
 		50DFD09F2BA508B500429932 /* RoshiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoshiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DFD0A32BA508B500429932 /* RoshiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshiUITests.swift; sourceTree = "<group>"; };
 		50DFD0A52BA508B500429932 /* RoshiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8315CC112BA50C41000205E9 /* Brain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
+		834D699D2BA5143C00DE0EEF /* BrainProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainProtocols.swift; sourceTree = "<group>"; };
+		834D69A12BA5148400DE0EEF /* Fool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fool.swift; sourceTree = "<group>"; };
+		834D69A32BA5148F00DE0EEF /* FoolProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoolProtocols.swift; sourceTree = "<group>"; };
+		834D69A62BA514C000DE0EEF /* Assistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assistant.swift; sourceTree = "<group>"; };
+		834D69A82BA514CA00DE0EEF /* AssistantProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				839599B72BA5257D00D998B2 /* SwiftOpenAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +93,7 @@
 				50DFD0982BA508B500429932 /* RoshiTests */,
 				50DFD0A22BA508B500429932 /* RoshiUITests */,
 				50DFD0852BA508B400429932 /* Products */,
+				839599B82BA525BC00D998B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +110,9 @@
 		50DFD0862BA508B400429932 /* Roshi */ = {
 			isa = PBXGroup;
 			children = (
+				834D69A52BA514AF00DE0EEF /* Assistant */,
+				834D69A02BA5146C00DE0EEF /* Fool */,
+				832F26192BA50B1A0077CDB6 /* Brain */,
 				50DFD0872BA508B400429932 /* RoshiApp.swift */,
 				50DFD0892BA508B400429932 /* ContentView.swift */,
 				50DFD08B2BA508B500429932 /* Assets.xcassets */,
@@ -129,6 +147,40 @@
 			path = RoshiUITests;
 			sourceTree = "<group>";
 		};
+		832F26192BA50B1A0077CDB6 /* Brain */ = {
+			isa = PBXGroup;
+			children = (
+				8315CC112BA50C41000205E9 /* Brain.swift */,
+				834D699D2BA5143C00DE0EEF /* BrainProtocols.swift */,
+			);
+			path = Brain;
+			sourceTree = "<group>";
+		};
+		834D69A02BA5146C00DE0EEF /* Fool */ = {
+			isa = PBXGroup;
+			children = (
+				834D69A12BA5148400DE0EEF /* Fool.swift */,
+				834D69A32BA5148F00DE0EEF /* FoolProtocols.swift */,
+			);
+			path = Fool;
+			sourceTree = "<group>";
+		};
+		834D69A52BA514AF00DE0EEF /* Assistant */ = {
+			isa = PBXGroup;
+			children = (
+				834D69A62BA514C000DE0EEF /* Assistant.swift */,
+				834D69A82BA514CA00DE0EEF /* AssistantProtocols.swift */,
+			);
+			path = Assistant;
+			sourceTree = "<group>";
+		};
+		839599B82BA525BC00D998B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +197,9 @@
 			dependencies = (
 			);
 			name = Roshi;
+			packageProductDependencies = (
+				839599B62BA5257D00D998B2 /* SwiftOpenAI */,
+			);
 			productName = Roshi;
 			productReference = 50DFD0842BA508B400429932 /* Roshi.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +272,9 @@
 				Base,
 			);
 			mainGroup = 50DFD07B2BA508B400429932;
+			packageReferences = (
+				839599B52BA5254500D998B2 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */,
+			);
 			productRefGroup = 50DFD0852BA508B400429932 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,7 +317,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834D699E2BA5143C00DE0EEF /* BrainProtocols.swift in Sources */,
+				834D69A42BA5148F00DE0EEF /* FoolProtocols.swift in Sources */,
+				834D69A92BA514CA00DE0EEF /* AssistantProtocols.swift in Sources */,
+				834D69A72BA514C000DE0EEF /* Assistant.swift in Sources */,
 				50DFD08A2BA508B400429932 /* ContentView.swift in Sources */,
+				834D69A22BA5148400DE0EEF /* Fool.swift in Sources */,
+				8315CC122BA50C41000205E9 /* Brain.swift in Sources */,
 				50DFD0882BA508B400429932 /* RoshiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +637,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		839599B52BA5254500D998B2 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jamesrochabrun/SwiftOpenAI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		839599B62BA5257D00D998B2 /* SwiftOpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 839599B52BA5254500D998B2 /* XCRemoteSwiftPackageReference "SwiftOpenAI" */;
+			productName = SwiftOpenAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 50DFD07C2BA508B400429932 /* Project object */;
 }
