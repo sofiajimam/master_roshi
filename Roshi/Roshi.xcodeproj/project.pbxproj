@@ -35,6 +35,11 @@
 		83D3CCFF2BA59CCB00D5FCD5 /* SwiftOpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 83D3CCFE2BA59CCB00D5FCD5 /* SwiftOpenAI */; };
 		83F7A40D2BA5A28900003C96 /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F7A40C2BA5A28900003C96 /* Vision.swift */; };
 		83F7A40F2BA5A2A900003C96 /* VisionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F7A40E2BA5A2A900003C96 /* VisionProtocols.swift */; };
+		50DFD0B32BA50F9C00429932 /* SidebarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFD0B22BA50F9C00429932 /* SidebarMenuView.swift */; };
+		50FA223A2BA58FCD00382BB7 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 50FA22392BA58FCD00382BB7 /* MarkdownUI */; };
+		50FA223C2BA5990A00382BB7 /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA223B2BA5990A00382BB7 /* ToolBarView.swift */; };
+		50FA223E2BA5A03100382BB7 /* ChatRoshiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA223D2BA5A03100382BB7 /* ChatRoshiView.swift */; };
+		50FA22422BA5B8D600382BB7 /* NewChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FA22412BA5B8D600382BB7 /* NewChallengeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +86,10 @@
 		834D69A82BA514CA00DE0EEF /* AssistantProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantProtocols.swift; sourceTree = "<group>"; };
 		83F7A40C2BA5A28900003C96 /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
 		83F7A40E2BA5A2A900003C96 /* VisionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionProtocols.swift; sourceTree = "<group>"; };
+		50DFD0B22BA50F9C00429932 /* SidebarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarMenuView.swift; sourceTree = "<group>"; };
+		50FA223B2BA5990A00382BB7 /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
+		50FA223D2BA5A03100382BB7 /* ChatRoshiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoshiView.swift; sourceTree = "<group>"; };
+		50FA22412BA5B8D600382BB7 /* NewChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChallengeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +195,12 @@
 				50DFD08B2BA508B500429932 /* Assets.xcassets */,
 				50DFD0902BA508B500429932 /* Roshi.entitlements */,
 				50DFD08D2BA508B500429932 /* Preview Content */,
+				50DFD0B22BA50F9C00429932 /* SidebarMenuView.swift */,
+				50FA223D2BA5A03100382BB7 /* ChatRoshiView.swift */,
+				508E67BF2BA588C4001F731E /* RetoScreenView.swift */,
+				508E67C12BA58B65001F731E /* MarkdownView.swift */,
+				50FA223B2BA5990A00382BB7 /* ToolBarView.swift */,
+				50FA22412BA5B8D600382BB7 /* NewChallengeView.swift */,
 			);
 			path = Roshi;
 			sourceTree = "<group>";
@@ -414,6 +429,10 @@
 				448373F62BA5707E002B7FCE /* Bulma - Iteration 18900.mlmodel in Sources */,
 				83F7A40F2BA5A2A900003C96 /* VisionProtocols.swift in Sources */,
 				834D69A72BA514C000DE0EEF /* Assistant.swift in Sources */,
+				50FA223C2BA5990A00382BB7 /* ToolBarView.swift in Sources */,
+				50FA22422BA5B8D600382BB7 /* NewChallengeView.swift in Sources */,
+				50FA223E2BA5A03100382BB7 /* ChatRoshiView.swift in Sources */,
+				508E67C02BA588C4001F731E /* RetoScreenView.swift in Sources */,
 				50DFD08A2BA508B400429932 /* ContentView.swift in Sources */,
 				448373FC2BA57412002B7FCE /* WebViewModel.swift in Sources */,
 				834D69A22BA5148400DE0EEF /* Fool.swift in Sources */,
