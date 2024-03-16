@@ -83,6 +83,17 @@ struct ContentView: View {
             
         }
         .padding()
+            HStack(spacing: 10) {
+                Spacer()
+                SidebarMenuView()
+                RetoScreenView()
+                Spacer()
+            }.padding(10)
+        }.frame(minWidth: 0,
+                maxWidth: .infinity,
+                minHeight: 0,
+                maxHeight: .infinity,
+                alignment: .topLeading)
     }
 }
 #Preview {
