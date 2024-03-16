@@ -12,7 +12,8 @@ struct RetoScreenView: View {
         VStack{
             MarkdownView()
             Spacer()
-        }.frame(width: 520, height: .infinity)
+            ToolBarView()
+        }.frame(width: 520)
     }
 }
 

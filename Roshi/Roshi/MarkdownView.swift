@@ -22,7 +22,7 @@ struct MarkdownView: View {
                 .frame(width: 520, height: 43)
                 .background(Color(red: 0.56, green: 0.56, blue: 0.58).opacity(0.20))
             
-            VStack{
+            ScrollView{
                 Markdown{
                     """
                     This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
@@ -67,10 +67,11 @@ struct MarkdownView: View {
                     FontFamilyVariant(.monospaced)
                     FontSize(.em(0.85))
                     ForegroundColor(.black)
+                    FontFamily(.custom("SF Pro Display"))
                   }
-            }.padding(30)
+            }.padding([.horizontal], 30)
             Spacer()
-        }.frame(width: 520, height: 712)
+        }.frame(width: 520, height: .infinity)
             .background(.white)
             .cornerRadius(14)
     }
