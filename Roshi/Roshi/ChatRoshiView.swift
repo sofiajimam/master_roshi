@@ -26,7 +26,7 @@ struct ChatRoshiView: View {
             Spacer()
             HStack{
                 HStack{
-                    //Aqui va un input
+                    //Aqui va un input!!
                 }
             }.padding(16)
                 .frame(width: 400, height: 74)

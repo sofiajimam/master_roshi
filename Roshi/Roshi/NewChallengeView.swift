@@ -23,6 +23,7 @@ struct NewChallengeView: View {
                 .frame(width: 420, height: 175)
             
             HStack(spacing: 10) {
+            
                   Text("Generar mi reto")
                     .font(Font.custom("SF Pro Display", size: 16).weight(.medium))
                     .foregroundColor(.white)
